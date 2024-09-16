@@ -1,0 +1,31 @@
+// stylelint-disable selector-no-qualifying-type
+
+//
+// Base styles
+//
+
+.#{$class_prefix}input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; // For form validation feedback
+  align-items: stretch;
+  width: 100%;
+
+  > .#{$class_prefix}form-control {
+    position: relative; // For focus state's z-index
+    flex: 1 1 auto;
+    // Add width 1% and flex-basis auto to ensure that button will not wrap out
+    // the column. Applies to IE Edge+ and Firefox. Chrome does not require this.
+    width: 1%;
+    margin-bottom: 0;
+
+    // Bring the "active" form control to the top of surrounding elements
+    &:focus {
+      z-index: 3;
+    }
+
+    + .#{$class_prefix}form-control {
+      margin-left: -$input-border-width;
+    }
+  }
+}

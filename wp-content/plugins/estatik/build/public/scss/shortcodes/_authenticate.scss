@@ -1,0 +1,127 @@
+.es-auth {
+    width: 90%;
+    max-width: 550px;
+    font-size: 10px;
+    text-align: center;
+    padding: 0 10%;
+
+    .es-notify-list {
+        margin-bottom: 30px;
+    }
+
+    .es-terms-text a {
+        font-size: inherit;
+    }
+
+    .all-login-back {
+        margin: 0 0 25px;
+    }
+
+    .es-privacy-policy-container {
+        margin: 0 auto 17px;
+        max-width: 350px;
+        color: #78909C;
+    }
+
+    .es-icon_chevron-left {
+        margin-right: 8px;
+    }
+
+    a {
+        font-size: 1.2em;
+    }
+
+    .es-field:not(.es-field__terms_conditions), .forgot-pwd {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .es-field__es_user_password {
+        padding: 0;
+    }
+
+    .es-field:not(.es-field__terms_conditions) {
+        text-align: initial;
+        margin-bottom: 5px;
+
+        .es-field__label {
+            margin: 0 0 5px;
+        }
+    }
+
+    .forgot-pwd {
+        text-align: right;
+    }
+
+    h3.heading-font {
+        font-weight: bold;
+        font-size: 2.2em;
+        line-height: 1.54em;
+        color: #263238;
+        margin: 0 0 10px;
+    }
+
+    .es-btn {
+        &.es-btn--login {
+            margin: 35px 0 8px;
+        }
+
+        &.es-btn--reset {
+            margin: 10px 0 22px;
+        }
+
+        &.es-btn--signup {
+            margin: 5px 0 15px;
+        }
+    }
+
+    p {
+        font-size: 1.4em;
+        color: #263238;
+        line-height: 1.71em;
+        margin: 0 0 27px;
+
+        &.sign-in-text {
+            margin: 6px 0 0;
+        }
+
+        &.login-back {
+
+        }
+
+        a {
+            font-size: inherit;
+        }
+    }
+
+    .es-auth__item {
+
+        .es-recaptcha-wrapper {
+            margin: 1rem 0;
+
+            .js-g-recaptcha > div {
+                margin: 0 auto;
+            }
+        }
+
+        .es-btn.es-btn--auth {
+            display: block;
+            width: 100%;
+            max-width: 227px;
+            margin: 0 auto 24px auto;
+            padding: 0;
+        }
+
+        &.es-auth__item--hidden {
+            display: none;
+        }
+    }
+}
+
+.es-authentication-popup {
+    .es-auth {
+        width: 100%;
+        max-width: unset;
+    }
+}

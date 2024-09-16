@@ -1,0 +1,128 @@
+.es-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+
+  h2 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    margin: 0;
+  }
+
+  &.es-tabs--vertical > .es-tabs__nav {
+    width: 100%;
+    max-width: 288px;
+    flex: 1 0 288px;
+    padding: 40px 50px 50px;
+    box-sizing: border-box;
+
+    h1 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;
+        color: #263238;
+      margin: 0;
+    }
+
+    .es-tabs__nav-inner {
+      //position: fixed;
+      width: 100%;
+      max-width: 288px;
+    }
+
+    @media screen and (max-width: 782px) {
+      padding: 30px;
+      max-width: 200px;
+      flex: 1 0 200px;
+
+      .es-tabs__nav-inner {
+        max-width: 150px;
+      }
+    }
+
+    @media screen and (max-width: 580px) {
+      flex: 1 0 100%;
+      max-width: initial;
+      width: 100%;
+
+      .es-tabs__nav-inner {
+        //position: static;
+        max-width: initial;
+      }
+    }
+
+    ul {
+      margin-top: 30px;
+
+      a.es-tabs__nav-link {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.45;
+        color: #37474F;
+        text-decoration: none;
+        display: block;
+        padding: 6px 0;
+      }
+
+      a:focus {
+        outline: 0;
+        box-shadow: none;
+      }
+
+      li {
+        margin-bottom: 0;
+        position: relative;
+        padding-left: 16px;
+        border-left: 2px solid transparent;
+      }
+
+      li.active {
+        border-left: 2px solid #69C200;
+
+        a.es-tabs__nav-link {
+          color:#263238;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &.es-tabs--vertical .es-tabs__nav ul li {
+    display: block;
+  }
+
+  &.es-tabs--vertical > .es-tabs__wrapper {
+    width: 100%;
+    flex: 1;
+    padding: 42px 55px;
+    position: relative;
+    min-width: 400px;
+
+    @media screen and (max-width: 782px) {
+      padding: 30px 50px;
+    }
+  }
+
+  & > .es-tabs__nav {
+    background: #ECEFF1;
+  }
+
+  & > .es-tabs__nav {
+    flex: 1 0 100%;
+    width: 100%;
+  }
+
+  .es-tabs__nav ul {
+    margin: 0;
+  }
+
+  & > .es-tabs__wrapper {
+    flex: 1 0 100%;
+    width: 100%;
+  }
+
+  .es-tabs__nav ul li {
+    display: inline-block;
+  }
+}

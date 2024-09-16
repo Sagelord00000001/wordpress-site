@@ -1,0 +1,50 @@
+.mfp-bg.es-magnific {
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.es-mfg-close-ico {
+    font-size: 1em;
+    color: #B0BEC5;
+    margin-right: 5px;
+}
+
+.es-magnific-popup {
+    max-width: 555px;
+    font-size: 10px;
+    position: relative;
+    width: auto;
+    margin: 20px auto;
+    padding: 37px 20px 45px;
+
+    /* Surfaces/Primary/Default */
+
+    background: #FFFFFF;
+    /* Shadows/Primary/Active */
+
+    box-shadow: 0 4px 8px rgba(38, 50, 56, 0.15);
+    border-radius: 6px;
+
+    .es-icon.mfp-close {
+        background: transparent !important;
+        font-size: 3em;
+        color: #B0BEC5;
+        cursor: pointer;
+        top: 5px;
+        right: 2px;
+        font-family: "es-icon";
+    }
+
+    h4 {
+        text-align: center;
+        color: #263238;
+        font-weight: bold;
+        font-size: 2.2em;
+        line-height: 1.54em;
+    }
+
+    p {
+        font-size: 1.4em;
+        line-height: 1.71em;
+        color: #263238;
+    }
+}

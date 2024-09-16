@@ -1,0 +1,86 @@
+@import "../../common/scss/es-icon";
+
+.taxonomy-es_location {
+  background: #fff;
+
+  .wp-list-table {
+    font-family: 'Roboto', sans-serif;
+    border: 0;
+
+    .row-actions {
+      display: none;
+    }
+
+    &.striped > tbody > :nth-child(odd) {
+      background: #fff;
+    }
+
+    &.striped > tbody > :nth-child(even) {
+      background: rgba(236, 239, 241, 0.5);
+    }
+
+    thead {
+      background: #263238;
+
+      td, th {
+        border: 0;
+      }
+
+      th {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 18px;
+        color: #FFFFFF;
+
+        .es-icon {
+          font-size: 16px;
+        }
+
+        a {
+          color: #FFFFFF;
+        }
+      }
+
+      .check-column {
+        padding-top: 0;
+      }
+
+      .column-actions {
+        padding-top: 5px;
+      }
+    }
+
+    tbody {
+      td:not(.colspanchange), th {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #fff;
+      }
+
+      tr.active {
+        background: #E1F5FE !important;
+      }
+
+      td {
+        font-size: 14px;
+        color: #37474F;
+        line-height: 24px;
+      }
+    }
+
+    tfoot {
+      display: none;
+    }
+
+    .column-post_id {
+      width: 65px;
+    }
+
+    .column-actions {
+      text-align: center;
+      width: 50px;
+    }
+  }
+}

@@ -1,0 +1,422 @@
+.es-btn, .widget .es-btn, .entry-content .es-btn, input.es-btn, button.es-btn {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 36px;
+  height: 40px;
+  letter-spacing: initial;
+  white-space: nowrap;
+  outline: none;
+  text-align: center;
+  box-sizing: border-box;
+  text-decoration: none !important;
+
+  &.es-btn--secondary {
+    &:hover {
+      text-transform: inherit;
+    }
+  }
+
+  &.es-btn--gray {
+    background: #EFF3F5;
+    border-color: #EFF3F5;
+    box-shadow: none;
+
+    .es-icon {
+      color: #263238;
+    }
+
+    &.es-btn--active {
+      background: #EFF3F5;
+      border-color: #EFF3F5;
+
+      .es-icon {
+        color: #DADADA;
+      }
+    }
+  }
+
+  // Icon sizes.
+  &.es-btn--small {
+    height: 32px;
+    line-height: 28px;
+  }
+
+  &.es-btn--medium {
+    height: 36px;
+    line-height: 32px;
+  }
+
+  &.es-btn--big {
+    height: 40px;
+    line-height: 36px;
+  }
+
+  &.es-btn--icon {
+    width: 40px;
+    padding: 0;
+
+    .es-btn__label {
+      display: none;
+    }
+
+    &.es-btn--small {
+      width: 32px;
+    }
+
+    &.es-btn--medium {
+      width: 36px;
+    }
+
+    &.es-btn--big {
+      width: 40px;
+    }
+  }
+
+  // Button icon styles.
+  .es-icon {
+    vertical-align: middle;
+    font-size: 16px;
+
+    &.es-icon_close {
+      font-size: 18px;
+      position: relative;
+      top: -1px;
+    }
+
+    &.es-icon_search {
+      font-size: 24px;
+    }
+  }
+
+  &:not(.es-btn--icon) {
+    padding: 0 24px;
+
+    .es-icon {
+      margin: 0 6px 0 1px;
+    }
+  }
+
+  &:not(.es-btn--bordered):not(.es-btn--gray) {
+    box-shadow: 0 1px 4px rgba(38, 50, 56, 0.2);
+  }
+
+  &.es-btn--primary {
+    font-size: 14px;
+  }
+
+  &.es-btn--default, &.es-btn--secondary {
+    font-size: 12px;
+  }
+
+  &.es-btn--default {
+    color: #263238;
+    border-color: transparent;
+    background: #fff;
+    text-transform: none;
+
+    &[disabled], &.es-btn--disabled {
+      color: #B0BEC5;
+    }
+
+    .es-icon {
+      color: #B0BEC5;
+    }
+  }
+
+  &.es-btn--facebook {
+    background: #4267B2;
+    border-color: #4267B2;
+
+    &:hover, &:focus {
+      background: #518AD8;
+      border-color: #518AD8;
+    }
+
+    &[disabled], &.es-btn--disabled {
+      background: #C2DEF8;
+      border-color: #C2DEF8;
+    }
+  }
+
+  &.es-btn--google {
+    background: #DB4437;
+    border-color: #DB4437;
+
+    &:hover, &:focus {
+      background: #E65B51;
+      border-color: #E65B51;
+    }
+
+    &[disabled], &.es-btn--disabled {
+      background: #FBCED1;
+      border-color: #FBCED1;
+    }
+  }
+
+  &:not(.es-btn--bordered):not(.es-btn--default) {
+    color: #fff;
+
+    &:not(.es-btn--auth) {
+      text-transform: uppercase;
+    }
+  }
+
+  &.es-btn--bordered:not(:hover):not(:active) {
+    background: transparent;
+    box-shadow: none;
+    text-transform: none;
+  }
+
+  &.es-btn--active {
+    .es-icon_heart {
+      @extend .es-icon_heart-filled;
+    }
+  }
+
+  &.es-btn--preload, &.es-btn--active.es-btn--preload {
+    .es-icon {
+      animation:spin 1s linear infinite;
+      @extend .es-icon_preload;
+    }
+  }
+
+  &:hover:not([disabled]):not(.es-btn--disabled) {
+    cursor: pointer;
+
+    &:not(.es-btn--auth):not(.es-btn--default) {
+      opacity: 0.8;
+    }
+
+    &:not(.es-btn--bordered):not(.es-btn--gray) {
+      box-shadow: 0 2px 8px rgba(38, 50, 56, 0.15);
+    }
+
+    .es-icon {
+      &.es-icon_twitter {
+        color: #00ACEE !important;
+      }
+
+      &.es-icon_facebook {
+        color: #4267B2 !important;
+      }
+
+      &.es-icon_linkedin {
+        color: #0E76A8 !important;
+      }
+
+      &.es-icon_pinterest {
+        color: #C8232C !important;
+      }
+
+      &.es-icon_youtube {
+        color: #FF0000 !important;
+      }
+    }
+
+    &.es-btn--active:not(.es-btn--preload) {
+      .es-icon_heart {
+        @extend .es-icon_heart;
+      }
+    }
+  }
+
+  &[disabled], &.es-btn--disabled {
+    &:not(.es-btn--default) {
+      opacity: 0.25;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//&, &:hover {
+//  text-decoration: none !important;
+//  border: 0;
+//  white-space: nowrap;
+//  height: 40px;
+//  font-size: 1.4em;
+//  line-height: 40px;
+//  margin: 0;
+//  text-transform: uppercase;
+//  text-align: center;
+//  cursor: pointer;
+//  color: #fff;
+//  //background-color: gray;
+//  box-shadow: 0 1px 4px rgba(38, 50, 56, 0.2);
+//  border-radius: 6px;
+//  font-weight: bold;
+//  letter-spacing: 0.01em;
+//  box-sizing: border-box;
+//  padding: 0 24px;
+//  opacity: 1;
+//  display: inline-block;
+//}
+//
+//&[disabled], .es-btn--disabled {
+//  opacity: 0.5;
+//}
+//
+//&:not([disabled]):hover {
+//  opacity: 0.8;
+//}
+//
+//&.es-btn--small {
+//  font-size: 1.2em;
+//}
+//
+//&.es-btn--default {
+//  background-color: #EFF3F5;
+//  color: #263238;
+//  box-shadow: none;
+//
+//  &:hover, &.es-btn--active {
+//    color: #B0BEC5;
+//  }
+//}
+//
+//.es-icon {
+//  vertical-align: middle;
+//  margin-right: 6px;
+//  line-height: inherit;
+//
+//  &.es-icon_twitter {
+//    top: 2px;
+//    position: relative;
+//  }
+//}
+//
+//&.es-btn--transparent {
+//  &.es-btn--primary, &.es-btn--secondary {
+//    box-shadow: none;
+//  }
+//}
+//
+//&.es-btn--share:hover {
+//  text-decoration: none;
+//  opacity: 0.9;
+//
+//  .es-icon_twitter {
+//    color: #00ACEE;
+//  }
+//
+//  .es-icon_facebook {
+//    color: #4267B2;
+//  }
+//
+//  .es-icon_linkedin {
+//    color: #0E76A8;
+//  }
+//
+//  .es-icon_pinterest {
+//    color: #C8232C;
+//  }
+//
+//  .es-icon_youtube {
+//    color: #FF0000;
+//  }
+//}
+//
+
+//
+//&.es-btn__wishlist:hover, &.es-btn__wishlist--active {
+//  .es-icon {
+//    color: #F27A80;
+//  }
+//}
+//
+//&.es-btn__wishlist--active {
+//  .es-icon:before {
+//    @extend .es-icon_heart-filled;
+//    color: #FF5A5F;
+//  }
+//}
+//
+//&.es-btn--icon {
+//  height: 36px;
+//  width: 36px;
+//  padding: 0;
+//  line-height: 36px;
+//
+//  .es-icon {
+//    margin-right: 0;
+//  }
+//
+//  .es-btn__label {
+//    display: none;
+//  }
+//}
+//
+//&.es-btn--share {
+//  font-size: 1.2em;
+//  background: #fff;
+//  color: #263238;
+//  text-transform: capitalize;
+//
+//  .es-icon {
+//    color: #B0BEC5;
+//    font-size: 1.3em;
+//  }
+//}
+//
+//&.es-btn--social {
+//  font-size: 1.4em;
+//  color: #fff;
+//  text-transform: initial;
+//
+//  .es-icon {
+//    color: #fff;
+//    font-size: 1.3em;
+//  }
+//}
+//
+//&.es-btn--facebook {
+//  background: #4267B2;
+//}
+//
+//&.es-btn--google {
+//  background: #DB4437;
+//}
+//
+//&:focus {
+//  outline: none;
+//  border: 0;
+//  text-shadow: none;
+//  text-decoration: none;
+//}
+//
+//&.es-btn--transparent {
+//  background: transparent;
+//  text-transform: capitalize;
+//  color: #263238;
+//  box-shadow: 0 1px 4px rgba(38, 50, 56, 0.2);
+//  border: 0;
+//
+//  .es-icon {
+//    color: #B0BEC5;
+//  }
+//}
+//
+//&.es-btn--white {
+//  background: #fff;
+//  display: inline-block;
+//  text-transform: initial;
+//  color: #263238;
+//  box-shadow: 0 1px 4px rgba(38, 50, 56, 0.2);
+//  border: 0;
+//
+//  .es-icon {
+//    color: #B0BEC5;
+//  }
+//}

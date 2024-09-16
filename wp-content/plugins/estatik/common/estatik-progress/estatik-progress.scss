@@ -1,0 +1,19 @@
+.es-progress {
+  background: #CFD8DC;
+  position: relative;
+  height: 40px;
+  color: #fff;
+
+  &__inner {
+    background: #69C200;
+    position: absolute;
+    height: 100%;
+  }
+
+  &__percent {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+  }
+}

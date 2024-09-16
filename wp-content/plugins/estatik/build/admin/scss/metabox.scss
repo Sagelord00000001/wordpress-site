@@ -1,0 +1,252 @@
+.es-metabox {
+
+  .es-files-list:not(:empty) {
+    margin-top: 20px;
+  }
+
+  .es-tabs__content {
+    .es-field--media, .es-field--textarea, .es-field--editor {
+      flex: 1 0 100%;
+    }
+  }
+
+  .es-tabs__content:not(#location) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+
+    //& > .es-field {
+    //  margin: 12px 0;
+    //}
+
+    .es-field--files-input {
+      margin: 16px 0;
+
+      .es-field__label {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    .es-is-required {
+      & > .es-field__label::after {
+        content: '*';
+        color: red;
+        margin-left: 5px;
+      }
+      
+      & > label {
+        .es-field__label:first-child::after {
+          content: '*';
+          color: red;
+          margin-left: 5px;
+        }
+      }
+    } 
+
+    .es-field-break {
+      flex: 1 0 100%;
+    }
+
+    & > * {
+      padding: 0 12px;
+    }
+
+    & > *:not(.es-field) {
+      flex: 1 0 100%;
+    }
+
+    & > .es-field.es-field--text, & > .es-field--multiple-checks, & > .es-field--checkboxes {
+      flex: 1 0 100%;
+    }
+
+    & > .es-field--incrementer, & > .es-field--number , & > .es-field.es-field__price_note {
+      flex: 0 0 33%;
+    }
+
+    & > .es-field--switcher {
+      flex: 0 0 50%;
+      margin: 8px 0 16px;
+    }
+  }
+
+  .es-field {
+    &__es_exterior_material, &__es_floor_covering, &__es_roof, &__es_parking {
+      .es-field {
+        display: inline-block;
+        width: 50%;
+        margin: 10px 0;
+      }
+    }
+  }
+
+  #location {
+    .es-notification {
+      margin-bottom: 20px;
+    }
+  }
+
+  .es-manual-address {
+    color: #263238;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 24px 0;
+    display: block;
+
+    &.js-es-return-false {
+      opacity: 0.5;
+    }
+  }
+
+  .es-field__gallery {
+    .es-images-list {
+      li:first-child {
+        .es-image-item__background {
+          &:before {
+            content: 'Cover photo';
+            position: absolute;
+            font-family: 'Roboto', sans-serif;
+            background: #FFB300;
+            border-radius: 6px;
+            padding: 4px 8px;
+            display: inline-block;
+            top: 4px;
+            left: 4px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 10px;
+            line-height: 11px;
+          }
+        }
+      }
+    }
+  }
+
+  .es-field.es-field--switcher {
+    max-width: 330px;
+  }
+
+  .es-field.es-field__is_address_disabled {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  .es-notification {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 16px;
+    color: #263238;
+    font-weight: normal;
+    border-radius: 6px;
+
+    .es-notification__close {
+      display: none;
+    }
+
+    a {
+      color: #263238;
+    }
+  }
+
+  .es-form-map {
+      width: 100%;
+      height: 250px;
+      margin: 22px 0;
+  }
+
+  &:not(.closed)>h2 {
+    display: none;
+  }
+
+  //.handlediv {
+  //  position: absolute;
+  //  z-index: 1;
+  //  right: 0;
+  //}
+  //
+  //&.closed {
+  //  .handlediv {
+  //    position: relative;
+  //  }
+  //}
+
+  .inside {
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  .es-tabs {
+    width: 100%;
+
+    &.es-tabs--vertical {
+      flex-wrap: wrap;
+
+      .es-tabs__nav {
+        padding: 30px 20px;
+        flex: 1;
+        width: 100%;
+        min-width: 200px;
+        max-width: unset;
+      }
+
+      .es-tabs__wrapper {
+        flex: 3;
+        padding: 25px 30px;
+      }
+    }
+
+    .es-tabs__content {
+      //&>.es-field:first-child {
+      //  margin-top: 0!important;
+      //}
+
+      h3 {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 16px 0 0;
+      }
+    }
+  }
+
+  .es-tabs__nav-inner {
+    ul {
+      margin: 0 !important;
+    }
+  }
+
+  .es-field--repeater {
+    max-width: 95%;
+
+    .es-repeater__delete-item {
+      display: none;
+      position: absolute;
+      right: -15px;
+      bottom: 35px;
+      font-size: 18px;
+    }
+
+    .es-repeater-item {
+      border: 0;
+      padding: 10px 0;
+      margin-right: 20px;
+
+      &:hover {
+        .es-repeater__delete-item {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .es-field--images, .es-field--media {
+    max-width: unset;
+  }
+}
+
+.post-type-properties #postimagediv {
+    display: none;
+}

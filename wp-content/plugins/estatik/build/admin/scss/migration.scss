@@ -1,0 +1,78 @@
+@import "../../common/scss/es-icon";
+
+.es-notify {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 22px;
+  color: #263238;
+  padding: 12px 24px;
+  margin-bottom: 10px;
+  position: relative;
+
+  &:before {
+    vertical-align: middle;
+    font-size: 20px;
+    margin-right: 10px;
+    @extend .es-icon;
+  }
+
+  &--info {
+    background: #E1F4FA;
+
+    &:before {
+      color: #24A2D8;
+      @extend .es-icon_info;
+    }
+  }
+
+  &--success {
+    background: #DFF2EF;
+
+    &:before {
+      color: #13A48E;
+      @extend .es-icon_check-mark;
+    }
+  }
+
+  &--error {
+    background: #FFEBEF;
+
+    &:before {
+      color: #D82F38;
+      @extend .es-icon_error;
+    }
+  }
+
+  &--warning {
+    background: #FFF8E1;
+  }
+}
+
+body[class*='_es_migration'] {
+  #wpbody {
+    background: #fff;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .es-dashboard {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .update-nag {
+    display: none;
+  }
+
+  #wpcontent {
+    padding-left: 0;
+  }
+
+  .wrap {
+    margin: 0;
+    padding: 35px 50px;
+  }
+}

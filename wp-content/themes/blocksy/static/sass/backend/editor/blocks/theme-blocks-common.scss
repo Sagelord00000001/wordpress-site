@@ -1,0 +1,72 @@
+.ct-social-box,
+.ct-posts-block,
+.ct-dynamic-data,
+.ct-about-me-block,
+.ct-contact-info-block,
+.wp-block-blocksy-share-box {
+
+	a {
+		pointer-events: none;
+		text-decoration: none;
+	}
+}
+
+
+.ct-posts-block,
+.ct-contact-info-block {
+	
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+
+.ct-about-me-block {
+
+	img {
+		object-fit: cover;
+		border-radius: inherit;
+	}
+}
+
+
+// advanced posts & taxonomies
+.wp-block-blocksy-query,
+.wp-block-blocksy-tax-query {
+	box-sizing: border-box;
+
+	a {
+		pointer-events: none;
+		text-decoration: none;
+	}
+
+	.components-placeholder {
+		min-height: 200px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.components-placeholder__label {
+		font-size: 20px;
+	}
+
+	.components-placeholder__fieldset {
+		text-align: center;
+		justify-content: center;
+
+		.components-placeholder__instructions {
+			margin-bottom: 2em;
+		}
+	}
+}
+
+
+// query responsive grid
+.is-mobile-preview .ct-query-template-grid {
+	--ct-grid-columns: var(--ct-grid-columns-mobile);
+}
+
+.is-tablet-preview .ct-query-template-grid {
+	--ct-grid-columns: var(--ct-grid-columns-tablet);
+}

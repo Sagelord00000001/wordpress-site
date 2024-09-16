@@ -1,0 +1,73 @@
+.es-request-form {
+    padding: 16px 16px 0;
+
+    &.es-request-form--sidebar {
+        padding-bottom: 16px;
+    }
+
+    &.es-request-form--section {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .es-widget__title {
+        color: #fff;
+    }
+
+    .es-recaptcha-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .es-field {
+        margin-bottom: 7px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .es-field__label {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.2em;
+            line-height: 1.66em;
+            color: #FFFFFF;
+        }
+    }
+
+    .es-field__message {
+        textarea {
+            height: 120px;
+        }
+    }
+
+    .es-privacy-policy-container {
+        color: #B0BEC5;
+        margin: 17px 0;
+    }
+}
+
+.es-ajax-form-popup {
+    padding: 40px 7% 45px;
+    text-align: center;
+
+    .es-icon {
+        font-size: 2.4em;
+        margin-bottom: 14px;
+
+        &.es-icon_check-mark {
+            color: #13A48E;
+        }
+
+        &.es-icon_close:not(.mfp-close) {
+            color: red;
+        }
+    }
+
+    .es-btn {
+        margin: 35px 16px 0 16px;
+    }
+
+    h4 {
+        margin: 0 0 10px;
+    }
+}

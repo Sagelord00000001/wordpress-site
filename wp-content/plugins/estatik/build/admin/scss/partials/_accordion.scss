@@ -1,0 +1,48 @@
+.es-accordion {
+  .es-accordion__head {
+    position: relative;
+  }
+
+  .es-accordion__body {
+    display: none;
+    padding-top: 20px;
+
+      .es-field--repeater {
+          margin: 0;
+      }
+
+      .es-field:last-child {
+          margin-bottom: 0;
+      }
+  }
+
+  .es-accordion__toggle {
+    display: block;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 4px;
+      background: #fff;
+
+    .es-icon {
+      color: #37474F;
+      font-size: 24px;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+
+  &.es-accordion--active {
+    .es-accordion__body {
+      //display: block;
+    }
+
+    .es-accordion__toggle {
+      transform: rotate(180deg);
+    }
+  }
+}

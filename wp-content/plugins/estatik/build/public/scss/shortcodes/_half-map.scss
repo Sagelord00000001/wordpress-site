@@ -1,0 +1,130 @@
+.es-hfm {
+    width: 100%;
+    font-size: 10px;
+
+    .es-hfm__wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3em;
+
+        .es-hfm__map-container, .es-hfm__listings {
+            height: 100vh;
+        }
+
+        .es-hfm__listings {
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                display: none;  /* Safari and Chrome */
+            }
+
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        .es-listings {
+            padding: 4px;
+        }
+
+        .es-hfm__map {
+            height: 100%;
+        }
+    }
+
+    &.es-hfm--min-map {
+        .es-hfm__wrap {
+            grid-template-columns: calc(57% - 1.5em) calc(43% - 1.5em);
+        }
+    }
+
+    &.es-hfm--only-map {
+        .es-listings-filter {
+            margin-bottom: 0;
+        }
+
+        .es-hfm__wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .es-hfm__listings {
+            height: auto;
+        }
+
+        .es-hfm__map-container, .es-hfm__listings {
+            flex: 1 0 100%;
+        }
+    }
+}
+
+.es-map-popup {
+    cursor: auto;
+    height: 0;
+    position: absolute;
+    transform: translate(-50%, 25px);
+    /* The max width of the info window. */
+    width: 90%;
+    max-width: 260px;
+}
+
+.es-properties.es-properties--hfm {
+
+    &.es-properties--hfm--full-width {
+        width: 100vw;
+        position: relative;
+        z-index: 1;
+    }
+
+    &.es-properties--hfm--min-map {
+        .es-properties__list {
+            flex: 1 0 calc(60% - 30px);
+        }
+
+        .es-properties__map {
+            flex: 1 0 calc(40% - 30px);
+        }
+    }
+
+    &.es-properties--hfm--only-map {
+        .es-properties__list {
+            flex: 1 0 calc(100% - 30px);
+            order: 2;
+        }
+
+        .es-properties__search {
+            order: 0;
+        }
+
+        .es-properties__map {
+            flex: 1 0 calc(100% - 30px);
+            height: 60vh;
+            order: 1;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &:not(.es-properties--hfm--only-map):not(.es-properties--hfm--min-map) {
+        .es-listings__wrap-inner {
+            height: 100vh;
+            overflow-y: scroll;
+
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
+    .es-listings {
+        padding: 4px;
+    }
+}
+
+.es-map-error {
+    font-size: 1.4em;
+    text-align: center;
+    color: rgb(122, 122, 122);
+    margin-top: 100px;
+}

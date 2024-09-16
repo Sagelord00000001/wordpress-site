@@ -1,0 +1,268 @@
+.es-accordion .es-accordion__head {
+  position: relative;
+}
+.es-accordion .es-accordion__body {
+  display: none;
+  padding-top: 20px;
+}
+.es-accordion .es-accordion__body .es-field--repeater {
+  margin: 0;
+}
+.es-accordion .es-accordion__body .es-field:last-child {
+  margin-bottom: 0;
+}
+.es-accordion .es-accordion__toggle {
+  display: block;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 4px;
+  background: #fff;
+}
+.es-accordion .es-accordion__toggle .es-icon {
+  color: #37474F;
+  font-size: 24px;
+}
+.es-accordion .es-accordion__toggle:focus {
+  outline: 0;
+  box-shadow: none;
+}
+.es-accordion.es-accordion--active .es-accordion__toggle {
+  transform: rotate(180deg);
+}
+
+body[class*=_es_settings] {
+  background: #fff;
+}
+body[class*=_es_settings] #wpcontent {
+  padding: 0;
+  background: #fff;
+}
+body[class*=_es_settings] #wpbody-content {
+  padding-bottom: 0;
+}
+body[class*=_es_settings] .update-nag {
+  display: none;
+}
+body[class*=_es_settings] #wpfooter {
+  display: none;
+}
+
+#es-settings {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+#es-settings h4 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #263238;
+  font-family: "Heebo", sans-serif;
+}
+#es-settings .es-field .es-field__caption a {
+  color: #B0BEC5;
+}
+#es-settings .es-accordion {
+  border-bottom: 2px solid #CFD8DC;
+  padding: 0 0 25px;
+  margin: 25px 0 0;
+}
+#es-settings .es-field__map_cluster_color, #es-settings .es-field__map_marker_color {
+  flex-wrap: wrap;
+}
+#es-settings .es-field__map_cluster_color label, #es-settings .es-field__map_marker_color label {
+  flex: 1 0 100%;
+}
+#es-settings a {
+  color: #37474f;
+}
+#es-settings hr {
+  margin: 20px 0 32px;
+  border: 0;
+  background: #CFD8DC;
+  width: 100%;
+  height: 2px;
+}
+#es-settings h3 {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #263238;
+  margin: 6px 0;
+}
+#es-settings p.es-subtitle {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 18px;
+  color: #B0BEC5;
+  margin: 0;
+}
+#es-settings p.es-subtitle a {
+  text-decoration: underline;
+  color: #B0BEC5;
+}
+@media screen and (max-width: 782px) {
+  #es-settings .es-notification {
+    padding: 14px 30px;
+  }
+}
+#es-settings .es-setting-page-description {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #37474F;
+  margin: 8px 0 40px;
+}
+#es-settings .es-setting-page-description a {
+  text-decoration-line: underline;
+}
+#es-settings .es-box--marker svg {
+  width: 22px;
+  height: 22px;
+}
+#es-settings .es-box--marker label {
+  margin: 0;
+}
+#es-settings .es-box--marker label svg {
+  display: none;
+}
+#es-settings .es-btn--save {
+  margin-top: 30px;
+}
+#es-settings .es-settings-fields {
+  width: 100%;
+  margin-top: 28px;
+}
+#es-settings .es-settings-fields.es-settings-fields--max-width {
+  max-width: 360px;
+}
+@media screen and (max-width: 580px) {
+  #es-settings .es-settings-fields.es-settings-fields--max-width {
+    max-width: 100%;
+  }
+}
+#es-settings a:focus {
+  box-shadow: none;
+  outline: 0;
+}
+#es-settings .es-tabs .es-tabs__content h2 {
+  margin-bottom: 40px;
+}
+#es-settings .es-tabs .es-tabs__content .es-field.es-field__listings_layout .es-row, #es-settings .es-tabs .es-tabs__content .es-field.es-field__single_layout .es-row {
+  margin-top: -15px;
+  margin-bottom: -15px;
+}
+#es-settings .es-tabs .es-tabs__content .es-field.es-field__listings_layout .es-col-4, #es-settings .es-tabs .es-tabs__content .es-field.es-field__single_layout .es-col-4 {
+  max-width: 210px;
+  margin: 15px 0;
+}
+#es-settings .es-tabs .es-tabs__content .es-field.es-field__map_cluster_icon .es-box {
+  padding: 6px;
+}
+#es-settings .es-tabs .es-tabs__content .es-field.es-field__map_cluster_icon .es-box svg {
+  width: 44px;
+  height: 44px;
+}
+#es-settings .es-tabs .es-tabs__content .es-field.es-field__map_cluster_icon .es-box svg path {
+  display: initial !important;
+}
+#es-settings .es-tabs .es-tabs__content .es-field.es-field--pro-version:not(.es-field--radio-label):not(.es-field--incrementer) > label:after {
+  content: "PRO";
+  display: block;
+  background: #69C200;
+  border-radius: 6px;
+  width: 33px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  height: 20px;
+  font-size: 10px;
+  position: absolute;
+  right: -49px;
+  top: 0;
+}
+#es-settings .es-tabs .es-tabs__content .es-field.es-field--pro-version.es-field--incrementer > label:after {
+  position: absolute;
+  right: -50px;
+  top: 54%;
+}
+#es-settings .es-tabs .es-tabs__content .es-field.es-field--radio-boxed {
+  max-width: initial;
+}
+#es-settings .es-tabs .es-tabs__content .es-field.es-field__terms_input_type {
+  max-width: 620px;
+}
+#es-settings .es-tabs .es-tabs__content .es-field.es-field__terms_input_type .es-row {
+  margin-bottom: -15px;
+}
+#es-settings .es-tabs .es-tabs__content .es-field.es-field__terms_input_type .es-col-6 {
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 580px) {
+  #es-settings .es-tabs .es-tabs__content .es-field {
+    max-width: 100%;
+  }
+}
+
+.es-recommended-page {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 450px;
+  padding: 15px 15px;
+  align-items: center;
+  box-sizing: border-box;
+  border: 2px solid #ECEFF1;
+  border-radius: 6px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 20px;
+}
+.es-recommended-page .es-recommended-page__content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.es-recommended-page .es-recommended-page__content img {
+  margin-right: 15px;
+}
+.es-recommended-page .es-recommended-page__content b {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 18px;
+  color: #B0BEC5;
+  display: block;
+  margin-bottom: 8px;
+}
+.es-recommended-page .es-recommended-page__content span {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #263238;
+}
+@media screen and (max-width: 480px) {
+  .es-recommended-page {
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  .es-recommended-page .es-recommended-page__content, .es-recommended-page button, .es-recommended-page div {
+    flex: 1 0 100%;
+    text-align: center;
+  }
+  .es-recommended-page .es-recommended-page__content {
+    flex-wrap: wrap;
+  }
+  .es-recommended-page .es-recommended-page__content .es-recommended-page__content-inner {
+    margin: 20px 0;
+  }
+  .es-recommended-page .es-recommended-page__content img {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100px;
+  }
+  .es-recommended-page .es-recommended-page__content div {
+    flex: 1 0 100%;
+  }
+}
+
+/*# sourceMappingURL=settings.css.map */

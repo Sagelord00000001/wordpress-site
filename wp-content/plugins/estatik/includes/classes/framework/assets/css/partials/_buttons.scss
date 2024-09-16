@@ -1,0 +1,122 @@
+.es-btn {
+  border-radius: 6px;
+  border: 0;
+  padding: 7px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  background: transparent;
+  color: #fff !important;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(38, 50, 56, 0.3);
+  display: inline-block;
+  text-decoration: none !important;
+
+  &.es-btn--transparent {
+      box-shadow: none;
+      background: transparent;
+      color: #37474f !important;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .es-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  &.es-btn--icon-right {
+    .es-icon {
+        margin: 0 0 3px 8px;
+    }
+  }
+
+  .es-icon_upload {
+    font-size: 16px;
+  }
+
+  &.es-btn--large {
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+      .es-icon {
+          font-size: 20px;
+      }
+  }
+
+  &.es-btn--small {
+    padding: 6px 8px;
+    font-size: 12px;
+    height: 30px;
+  }
+
+  &.es-btn--primary {
+    background: #FFB300;
+
+    &:not([disabled]):hover {
+      background: #FFCA28;
+    }
+
+    &[disabled] {
+      background: #FFECB3;
+    }
+  }
+
+  &.es-btn--secondary {
+    background: #03A9F4;
+
+    &:not([disabled]):hover {
+      background: #4FC3F7;
+    }
+
+    &[disabled] {
+      background: #E1F5FE;
+    }
+  }
+
+  &.es-btn--third {
+    background: #263238;
+
+    &:not([disabled]):hover {
+      background: #37474F;
+    }
+
+    &[disabled] {
+      background: #CFD8DC;
+    }
+  }
+
+  &.es-btn--link {
+    box-shadow: none;
+    color: #B0BEC5 !important;
+    text-decoration: underline;
+  }
+
+  &[disabled] {
+    background: #CFD8DC;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+    &.es-preload {
+        &:after {
+            position: static;
+            display: inline-block;
+            width: 17px;
+            background: url(../images/preload-white.svg);
+            height: 17px;
+            background-size: cover;
+            transform: unset;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+    }
+}

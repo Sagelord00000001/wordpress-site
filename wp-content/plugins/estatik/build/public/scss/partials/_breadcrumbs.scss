@@ -1,0 +1,36 @@
+.es-breadcrumbs {
+  margin-bottom: 15px;
+  display: inline-block;
+
+  &__item, .es-icon {
+    display: inline-block;
+    font-size: 1.2em;
+    line-height: 1.67em;
+    color: #B0BEC5;
+    text-decoration: none;
+  }
+
+  .es-icon {
+    margin: 0 8px 0 14px;
+  }
+}
+
+
+.es-back-search-btn {
+  font-size: 1.2em;
+  line-height: 1.67em;
+  margin-right: 3.2em;
+  margin-bottom: 15px;
+  display: inline-block;
+
+  .es-icon {
+    margin-right: 8px;
+  }
+}
+
+
+.es-single--md {
+  .es-back-search-btn {
+    margin-right: 2.4em;
+  }
+}
