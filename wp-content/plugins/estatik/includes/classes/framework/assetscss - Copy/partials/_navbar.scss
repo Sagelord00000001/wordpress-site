@@ -1,0 +1,41 @@
+.es-navbar {
+  background: #263238;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  min-height: 48px;
+
+  .es-btn--align-right {
+    margin-left: auto;
+  }
+
+  ul {
+    margin: 0;
+    display: inline-block;
+    padding: 0 20px;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0;
+    margin: 0 16px;
+
+    &.active a {
+      color: #fff;
+    }
+
+    a {
+      color: #CFD8DC;
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      text-decoration: none;
+    }
+
+    &:not(.active):hover a {
+      opacity: 0.5;
+    }
+  }
+}

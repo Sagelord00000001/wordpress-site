@@ -1,0 +1,2426 @@
+@import "~@wordpress/base-styles/colors";
+@import "~@wordpress/base-styles/variables";
+@import "~@wordpress/base-styles/mixins";
+@import "~@wordpress/base-styles/breakpoints";
+@import "~@wordpress/base-styles/animations";
+@import "~@wordpress/base-styles/z-index";
+
+@import './settings.scss';
+@import './charts.scss';
+
+.button.button-large.simpay-button-large {
+	font-size: 14px;
+	line-height: 30px;
+	padding: 4px 12px;
+}
+
+.simpay-copy-hidden-input {
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.fixed .column-livemode {
+	width: 15%;
+	text-align: right;
+
+	@media screen and (max-width: 782px) {
+		text-align: left;
+	}
+
+	.simpay-badge {
+		margin-top: 3px;
+	}
+}
+
+.fixed .column-shortcode {
+	width: 25%;
+
+	.simpay-shortcode {
+		clip: rect(1px, 1px, 1px, 1px);
+		clip-path: inset(50%);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+}
+
+.post-type-simple-pay {
+
+	// Hide post type UI.
+	.misc-pub-curtime,
+	.misc-pub-visibility {
+		display: none;
+	}
+}
+
+.simpay-metabox-title {
+	border: 1px solid #eee;
+}
+
+.simpay-shortcode-section {
+	border-top: 1px solid #ddd;
+	border-width: 1px 0;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	position: relative;
+
+	label {
+		display: block;
+		margin-bottom: 6px;
+
+		.dashicons {
+			color: #8c8f94;
+			margin-right: 3px;
+		}
+	}
+
+	.simpay-copy-button {
+		line-height: normal;
+		position: absolute;
+		right: 20px;
+		bottom: 20px;
+		border: 0;
+		background: none;
+		box-shadow: none;
+		padding: 0;
+
+		&:hover {
+			border: 0;
+			background: none;
+			box-shadow: none;
+		}
+
+		.dashicons {
+			color: #3c434a;
+		}
+	}
+}
+
+.simpay-shortcode {
+	width: 100%;
+	padding: 8px;
+	line-height: 1;
+	margin: 0;
+	height: 32px;
+	resize: none;
+}
+
+/** Badge */
+.simpay-badge {
+	color: #3f3f46;
+	text-align: center;
+	line-height: 1;
+	padding: 5px 7px;
+	border-radius: 3px;
+	background: #e4e4e7;
+	border: 0;
+	box-shadow: none;
+	display: inline-flex;
+	align-items: center;
+
+	@at-root {
+		button#{&} {
+			cursor: pointer;
+
+			&:hover {
+				background: #d4d4d8;
+			}
+		}
+	}
+
+	&__icon {
+		opacity: 0.80;
+		margin: 2px 5px 0 0;
+	}
+
+	&--green {
+		color: #0e6245;
+		background: #cbf4c9;
+	}
+
+	&--yellow {
+		color: #983705;
+		background: #f8e5b9;
+	}
+}
+
+.simpay-stripe-account-info {
+	display: flex;
+	align-items: center;
+	margin-bottom: 8px;
+	position: relative;
+
+	.spinner {
+		float: none;
+		margin-top: 0;
+		margin-left: 0;
+	}
+}
+
+.simple-pay_page_simpay_settings,
+.post-type-simple-pay {
+
+	.simpay-settings-upgrade {
+		margin-top: 20px;
+		padding: 1px;
+		position: relative;
+		background: #fff;
+		border-radius: 4px;
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.20), 0 5px 10px rgb(0, 0, 0, 0.10);
+		max-width: 677px;
+
+		&__inner {
+			text-align: center;
+			margin: 0;
+			padding: 30px;
+		}
+
+		h3 {
+			line-height: 1.5;
+			font-size: 22px;
+			margin: 0 0 1.5rem;
+		}
+
+		ul {
+			margin: 1.5rem 0 calc(1.5rem - 6px);
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			@media screen and (min-width: 782px) {
+				margin-left: 4rem;
+				margin-right: 4rem;
+			}
+		}
+
+		li {
+			font-size: 15px;
+			margin: 6px 0;
+			width: 100%;
+
+			a {
+				color: #3c434a;
+				text-decoration: none;
+
+				&:hover {
+					color: var(--wp-admin-theme-color);
+					text-decoration: underline;
+				}
+			}
+
+			@media screen and (min-width: 782px) {
+				text-align: left;
+				width: 50%;
+			}
+		}
+
+		.button.button-large {
+			font-size: 17px;
+			line-height: 30px;
+			padding: 10px 20px;
+		}
+
+		small {
+			color: #666;
+			margin: 15px 0 0;
+			display: block;
+		}
+
+		.dashicons-yes {
+			color: #428bca;
+		}
+
+		.button-link {
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 20px;
+			color: #666;
+			font-weight: bold;
+			text-decoration: none;
+			margin-left: 5px;
+			padding: 6px 10px;
+			z-index: 2;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: #666;
+				text-decoration: none;
+			}
+		}
+
+		.simpay-upgrade-btn-subtext {
+			text-align: center;
+			margin: 0;
+			padding: 30px 20px 20px;
+			background-color: #fcf9e8;
+			border: 1px solid #edeac9;
+			border-width: 1px 0 0;
+			position: relative;
+			border-radius: 0;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+
+			@media screen and (min-width: 782px) {
+				padding-left: 4rem;
+				padding-right: 4rem;
+			}
+
+			svg {
+				background: #00a32a;
+				fill: white;
+				border-radius: 50%;
+				border: 4px solid #fff;
+				box-shadow: 0 0 0 1px #edeac9;
+				width: 28px;
+				height: 28px;
+				position: absolute;
+				top: -18px;
+				left: 50%;
+				margin-left: -18px;
+			}
+
+			u {
+				text-decoration: none;
+				font-weight: bold;
+				color: #00a32a;
+			}
+
+			a {
+				font-weight: normal;
+				display: inline-block;
+			}
+		}
+	}
+}
+
+// Form settings tabs/pages
+#simpay-payment-form-settings {
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	::-webkit-input-placeholder {
+		color: #9ba1a9;
+	}
+
+	::-moz-placeholder {
+		color: #9ba1a9;
+		opacity: 1;
+	}
+
+	:-ms-input-placeholder {
+		color: #9ba1a9;
+	}
+
+	// inside is applied to the outermost wrapper of post metaboxes
+	// generated by WordPress
+	.inside {
+		margin: 0;
+		padding: 0;
+	}
+
+	.simpay-panel-field .toolbar {
+		margin-bottom: -4px;
+
+		.simpay-field-select {
+			margin: 0 0 4px;
+			width: auto;
+			max-width: 70%;
+		}
+	}
+
+	// simpay-tabs is the class for the metabox tabs ul element in the form settings
+	.simpay-tabs {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		background: #fafafa;
+		border-right: 1px solid #ccd0d4;
+		line-height: 1em;
+		position: relative;
+		flex: 0 0 25%;
+
+		@media screen and (max-width: 782px) {
+			flex-basis: 100%;
+			flex-grow: 1;
+			border-right: 0;
+		}
+
+		li {
+			margin: 0;
+			padding: 0;
+
+			&:first-child {
+				margin-top: 12px;
+			}
+
+			&:last-child {
+				margin-bottom: 20px;
+
+				@media screen and (max-width: 782px) {
+					margin-bottom: 0;
+				}
+			}
+
+			&.active {
+				margin-left: -1px;
+				box-shadow: 0 1px 1px rgb(0, 0, 0, 0.04);
+				position: relative;
+
+				&:focus:after {
+					display: none;
+				}
+
+				&:before,
+				&:after {
+					content: '';
+					width: calc(100% + 1px);
+					height: 1px;
+					background: #ccd0d4;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					z-index: 2;
+				}
+
+				&:after {
+					top: auto;
+					bottom: 0;
+				}
+
+				a {
+					font-weight: bold;
+					background-color: #fff;
+					position: relative;
+					margin-right: -1px;
+
+					&:before {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						bottom: 0;
+						width: 4px;
+						height: 100%;
+						background: currentColor;
+						z-index: 3;
+					}
+
+					@media screen and (max-width: 782px) {
+						margin-right: 0;
+					}
+				}
+			}
+
+			.simpay-tab-item {
+				display: flex;
+				align-items: center;
+				line-height: 20px;
+				margin: 0;
+				padding: 8px 10px 8px 14px;
+				text-decoration: none;
+				transition: all 0.05s ease-in-out;
+
+				svg,
+				.dashicons {
+					margin-right: 6px;
+				}
+
+				@media screen and (max-width: 782px) {
+					padding: 18px;
+				}
+
+				&:focus {
+					outline: 0;
+					position: relative;
+					z-index: 3;
+					box-shadow: inset 0 0 0 1px currentColor, 0 0 0 1px currentColor;
+				}
+
+				&[href="#purchase-restrictions-settings-panel"],
+				&[href="#payment-page-settings-panel"] {
+					margin-bottom: 20px;
+					position: relative;
+
+					&:after {
+						content: '';
+						position: absolute;
+						left: 14px;
+						right: 14px;
+						bottom: -10px;
+						width: calc(100% - 28px);
+						height: 1px;
+						background: #eaeaea;
+					}
+				}
+
+				span > span {
+					color: #f18500;
+					font-size: 12px;
+					font-weight: 600;
+					margin: 0 0 0 5px;
+					display: inline-block;
+				}
+			}
+
+			&:not(.active) {
+
+				.simpay-tab-item {
+					color: inherit;
+				}
+			}
+		}
+	} // end .simpay-tabs
+
+	// simpay-panels-wrap is the main wrapper we use around the tabs and metabox content where the form settings are output
+	.simpay-panels-wrap {
+		background: #fff;
+		display: flex;
+
+		@media screen and (max-width: 782px) {
+			flex-direction: column;
+		}
+	}
+
+	.simpay-panels {
+		flex: 0 0 75%;
+		display: flex;
+
+		@media screen and (min-width: 1400px) {
+			flex-basis: 75%;
+		}
+
+		@media screen and (max-width: 782px) {
+			flex-basis: 100%;
+		}
+	}
+
+	.simpay-panel,
+	.simpay-panel-section {
+		width: 100%;
+	}
+
+	.simpay-panel {
+
+		> table {
+
+			&,
+			> tbody,
+			> thead {
+
+				&,
+				> tr {
+					display: block;
+					width: 100%;
+				}
+			}
+
+			&:last-child {
+				> tbody:last-child {
+					> tr:last-child {
+						> td {
+							border-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// simpay-panel-field is the wrapping tr element for each setting field on the form settings pages
+	.simpay-panel-field {
+
+		&--requires-upgrade {
+			position: relative;
+
+			td {
+
+				> div {
+					margin-right: 80px;
+
+					.button-small {
+						position: absolute;
+						top: calc(50% - 13px);
+						right: 18px;
+					}
+				}
+			}
+		}
+
+		&,
+		> td,
+		> th {
+			text-align: left;
+			display: block;
+		}
+
+		> td,
+		> th {
+			width: calc(100% - 36px);
+			margin-left: 18px;
+			margin-right: 18px;
+		}
+
+		th {
+			font-weight: bold;
+			padding-top: 18px;
+			padding-bottom: 5px;
+		}
+
+		td {
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: 18px;
+		}
+
+		p.description {
+			margin-top: 4px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		.simpay-panel-field__nested {
+			margin-top: 18px;
+
+			label {
+				font-weight: bold;
+				display: block;
+				margin-bottom: 4px;
+			}
+		}
+
+		.simpay-field-select,
+		.simpay-field-text {
+			min-width: 75%;
+			max-width: 100%;
+
+			@media screen and (max-width: 782px) {
+				min-width: 0;
+				width: 100%;
+			}
+		}
+
+		.simpay-field-textarea {
+			width: 100%;
+			max-width: 100%;
+		}
+
+		.notice {
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		// Validation error labels, important admin text
+		.error,
+		.simpay-important {
+			color: #a94442;
+			font-weight: normal;
+		}
+
+		// Image preview
+		.simpay-image-preview-wrap {
+			position: relative;
+			margin-top: 12px;
+
+			// Resize & position remove icon to top-left corner of image.
+			.simpay-remove-image-preview {
+				position: absolute;
+				top: -15px;
+				left: -15px;
+				cursor: pointer;
+				background-color: #fff;
+
+				&::before {
+					font-size: 22px;
+					line-height: 26px;
+				}
+			}
+
+			.simpay-image-preview {
+				max-height: 128px;
+				max-width: 128px;
+				border: 1px solid #ddd;
+			}
+		}
+
+	} // end .simpay-panel-field
+
+	// simpay-panel is the main wrapper for all of our form settings
+	.simpay-panel {
+
+		// Promo under payment form settings
+		.simpay-promo-under-box {
+			background-color: #f4f4f4;
+			border: 1px solid #e5e5e5;
+			padding: 18px;
+			margin-top: 18px;
+			position: relative;
+
+			&__dismiss {
+				color: inherit;
+				text-decoration: none;
+				position: absolute;
+				top: 8px;
+				right: 8px;
+
+				.dashicons-dismiss {
+					font-size: 16px;
+					width: 16px;
+					height: 16px;
+				}
+			}
+
+			h3 {
+				font-size: 18px;
+				font-weight: 600;
+				margin: 0;
+				padding: 0;
+			}
+
+			p {
+				font-size: 14px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+	} // end .simpay-panel
+
+
+	.simpay-metabox-content {
+		margin-bottom: -1px;
+		background-color: #f5f5f5;
+		border: 1px solid #c3c4c7;
+		border-width: 1px 0;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+		position: relative;
+	}
+
+	.simpay-show-if,
+	.simpay-panel-hidden {
+		display: none;
+	}
+
+	.simpay-payment-methods {
+		border: 1px solid #ccd0d4;
+		border-radius: 4px;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	}
+
+	.simpay-panel-field-payment-method {
+		display: block;
+		border-top: 1px solid #ccd0d4;
+		padding: 7px;
+		box-sizing: border-box;
+
+		&:first-child {
+			border-top: 0;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+		}
+
+		&__enable {
+			display: flex;
+			align-items: center;
+
+			input[type="checkbox"] {
+				margin-top: 0;
+				margin-right: 8px;
+			}
+		}
+
+		&__help {
+			text-decoration: none;
+
+			.dashicons {
+				font-size: 18px;
+				width: 18px;
+				height: 18px;
+			}
+		}
+
+		&__restrictions,
+		&__restrictions-ach {
+			margin-left: 72px;
+		}
+
+		&__icon {
+			border-radius: 3px;
+			overflow: hidden;
+			margin: 0 8px 0 5px;
+			width: 30px;
+			height: 30px;
+			flex-shrink: 0;
+
+			svg {
+				width: 30px;
+				height: 30px;
+			}
+		}
+
+		&__configure {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}
+
+// Styles that apply to both global & form/CPT settings pages
+#simpay-global-settings,
+#simpay-form-settings {
+
+	// Custom fields metaboxes wrapper
+	.simpay-metaboxes-wrapper {
+
+		.simpay-metaboxes {
+
+			&:not(.is-empty) {
+				border: 1px solid #ccd0d4;
+				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+				border-radius: 4px;
+			}
+		}
+
+		.simpay-handlediv {
+			display: none;
+			float: right;
+			width: 36px;
+			height: 36px;
+			margin: 0;
+			padding: 0;
+			border: 0;
+			background: none;
+			cursor: pointer;
+			display: block;
+		}
+
+		.postbox.closed .simpay-handlediv .toggle-indicator:before {
+			content: "\f140";
+		}
+
+		.postbox .simpay-handlediv {
+
+			&:focus {
+				outline: 0;
+
+				.toggle-indicator:before {
+					box-shadow: 0 0 0 1px #5b9dd9, 0 0 2px 1px rgba(30, 140, 190, 0.8);
+				}
+			}
+
+			.toggle-indicator:before {
+				margin-top: 4px;
+				width: 20px;
+				border-radius: 50%;
+				text-indent: -1px;
+			}
+		}
+
+		.simpay-metabox {
+			background: #fff;
+			border: 1px solid #ccd0d4;
+			margin: 0 -1px -1px;
+
+			.hndle {
+				border: 0;
+			}
+
+			select {
+				font-weight: 400;
+			}
+
+			&:first-of-type {
+				margin-top: -1px;
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+			}
+
+			&:last-of-type {
+				margin-bottom: -1px;
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+
+				.simpay-metabox-content {
+					border-bottom-left-radius: 4px;
+					border-bottom-right-radius: 4px;
+				}
+			}
+
+			h2 {
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				padding: 10px 0 10px 12px;
+
+				.simpay-field-type {
+					font-size: 90%;
+					color: gray;
+					font-weight: normal;
+					text-decoration: none;
+					margin-left: 10px;
+
+					@media screen and (max-width: 782px) {
+						display: none;
+					}
+				}
+
+				.dashicons-handle {
+					cursor: move;
+				}
+
+				strong {
+					font-size: 95%;
+					margin-left: 8px;
+					display: flex;
+					align-items: center;
+					flex-grow: 1;
+				}
+
+				svg {
+					border-radius: 3px;
+				}
+
+				select {
+					font-family: sans-serif;
+					max-width: 20%;
+					margin: 0.25em 0.25em 0.25em 0;
+				}
+
+				&.fixed {
+					cursor: pointer !important;
+				}
+
+				.dashicons-menu {
+					cursor: move;
+				}
+			}
+
+			.simpay-metabox-content-actions {
+				padding: 9px 18px;
+				justify-content: space-between;
+				display: flex;
+				align-items: center;
+			}
+
+			.simpay-metabox-content-actions__field-id {
+				display: flex;
+				align-items: center;
+
+				input {
+					margin: 0 2px 0 5px;
+					width: 50px;
+				}
+
+				a {
+					text-decoration: none;
+				}
+			}
+
+			.button-link.simpay-remove-field-link {
+				color: #a00;
+
+				&:hover {
+					color: #dc3232;
+				}
+			}
+
+			table {
+				border-spacing: 0;
+				width: 100%;
+
+				&.simpay-inner-table {
+					border: none;
+					padding: 0 1em;
+				}
+
+				tr td {
+					border-bottom-color: #ccd0d4;
+				}
+			}
+
+			.simpay-remove-plan {
+				color: #a00;
+			}
+		} // end .simpay-metabox
+
+		.simpay-custom-field-payment-button {
+
+			.dashicons-menu {
+				visibility: hidden;
+			}
+		}
+	} // end .simpay-metaboxes-wrapper
+
+	.sortable-placeholder {
+		margin: 5px;
+		display: block;
+		min-height: 36px;
+	}
+
+	// There is an issue with Chosen not having a width when elements are hidden to begin with so we set one here explicitly
+	.chosen-container {
+		min-width: 20em;
+		max-width: 30em;
+	}
+
+	// simpay-field is applied to all settings input elements
+	.simpay-field {
+
+		&.simpay-small-text {
+			width: 7em;
+		}
+
+		&.simpay-medium-text {
+			width: 15em;
+		}
+
+		// In lieu of .simpay-large-text, use
+		// WP core's "regular-text" class, which is 25em width.
+
+	} // end .simpay-field
+
+	// specifically radio input fields
+	.simpay-field-radios {
+
+		ul {
+			margin: 0;
+		}
+
+		> i {
+			margin-left: 5px;
+			vertical-align: middle;
+		}
+	}
+
+	// for radio fields that should be displayed inline
+	ul.simpay-field-radios-inline {
+		margin: 0 0 -10px;
+
+		li {
+			display: inline-block;
+			margin: 0 10px 10px 0;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	} // end .simpay-field-radios-inline
+
+	.simpay-currency-field {
+		display: flex;
+		align-items: center;
+
+		> &:focus {
+			position: relative;
+			z-index: 5;
+		}
+	}
+
+	// Common attributes for both left and right positioned currency symbols
+	.simpay-currency-symbol {
+		margin: 0;
+		padding-left: 8px;
+		padding-right: 8px;
+		line-height: 28px;
+		font-size: 14px;
+
+		@media screen and (max-width: 782px) {
+			line-height: 38px;
+		}
+
+		&-left {
+
+			border-top-left-radius: 4px;
+			border-bottom-left-radius: 4px;
+		}
+
+		&-right {
+
+			border-top-right-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+	}
+
+	div.simpay-currency-symbol {
+		border-color: #7e8993;
+		border-style: solid;
+		background-color: #fff;
+	}
+
+	select.simpay-currency-symbol {
+		padding-right: 25px;
+	}
+
+	// Specific styles for the left currency symbol
+	.simpay-currency-symbol-left {
+		border-width: 1px 0 1px 1px;
+
+		+ .simpay-field-amount {
+
+			border-radius: 0 4px 4px 0;
+		}
+	}
+
+	// Specific styles for the right currency symbol
+	.simpay-currency-symbol-right {
+		border-width: 1px 1px 1px 0;
+	}
+
+	// Amount input
+	.simpay-field-amount {
+		margin: 0;
+		padding-left: 8px;
+		padding-right: 8px;
+		font-size: 14px;
+		width: 6em;
+		position: relative;
+		z-index: 2;
+		border-radius: 0;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+	}
+
+	// Error messages
+	.simpay-error {
+		color: #f00;
+	}
+
+	// Docs links
+	.simpay-docs-link-wrap {
+
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		color: #666;
+		font-size: 13px;
+		font-style: italic;
+		padding: 15px 18px;
+
+		a {
+
+			.dashicons-editor-help {
+				color: #666;
+				text-decoration: none;
+				width: 17px;
+				height: 17px;
+				font-size: 17px;
+				padding-left: 4px;
+			}
+		}
+	}
+
+	.simpay-docs-icon {
+		color: #666;
+
+		&,
+		.dashicons-editor-help {
+			text-decoration: none;
+			width: 17px;
+			height: 17px;
+			font-size: 17px;
+		}
+	}
+}
+
+// Pro or account upgrade link button
+.button.button-primary.simpay-upgrade-btn {
+	background-color: #428bca;
+	border: 1px solid #428bca;
+	color: #fff;
+	display: inline-block;
+
+	&:focus {
+		box-shadow: 0 0 0 1px #fff, 0 0 0 3px #2d6ca2;
+	}
+
+	&:hover {
+		background-color: #037ad0;
+		border: 1px solid #428bca;
+	}
+}
+
+.simpay-upgrade-btn-subtext {
+	color: #3c434a;
+    font-size: 14px;
+	line-height: 1.5;
+    text-align: center;
+	margin: 40px 0 0;
+	padding: 30px 35px 20px;
+    background-color: #fcf9e8;
+	border: 3px solid #ebe29a;
+	border-radius: 4px;
+    position: relative;
+
+	svg {
+		background: #00a32a;
+		fill: white;
+		border-radius: 50%;
+		border: 3px solid #ebe29a;
+		width: 28px;
+		height: 28px;
+		position: absolute;
+		top: -14px;
+		left: 50%;
+		margin-left: -14px;
+	}
+
+	u {
+		text-decoration: none;
+		font-weight: bold;
+		color: #00a32a;
+	}
+
+	a {
+		text-decoration: none;
+		display: block;
+		margin-top: 6px;
+		font-weight: bold;
+	}
+}
+
+.post-type-simple-pay {
+
+	#post-body-content {
+		display: none;
+	}
+}
+
+/**
+ * Generic card.
+ */
+.simpay-card {
+	margin: 0 0 20px;
+	padding: 30px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+
+	&,
+	p {
+		line-height: 1.5;
+		font-size: 16px;
+	}
+
+	h3 {
+		line-height: 1.6;
+		font-size: 18px;
+		margin: 0 0 20px;
+		color: #23282C;
+	}
+
+	p {
+		margin: 0 0 20px;
+	}
+
+	p,
+	ul {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	figure {
+		float: right;
+		margin: 0 0 30px 30px;
+		max-width: 400px;
+
+		iframe,
+		img {
+			max-width: 100%;
+		}
+
+		figcaption {
+			text-align: center;
+		}
+
+		@media screen and (max-width: 782px) {
+			margin: 0 0 30px;
+			max-width: 100%;
+			float: none;
+		}
+	}
+}
+
+/**
+ * Docs list
+ */
+.simpay-doc-suggestions {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.simpay-doc-suggestion {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 0 1 33.333%;
+	padding: 30px;
+	border-right: 1px solid #c3c4c7;
+	box-sizing: border-box;
+
+	&:nth-child(3n) {
+		border-right: 0;
+	}
+
+	@media screen and (max-width: 782px) {
+		flex: 0 1 100%;
+		border-bottom: 1px solid #c3c4c7;
+		border-right: 0;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+
+	h3 {
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+
+	p {
+		font-size: 15px;
+	}
+
+	.dashicons {
+		font-size: 40px;
+		width: 40px;
+		height: 40px;
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.button-large {
+		font-size: 16px;
+	}
+}
+
+/**
+ * Addons
+ */
+.simpay-addons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 20px 0;
+}
+
+.simpay-addon {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	flex-basis: calc(33% - 10px);
+	box-sizing: border-box;
+
+	@media screen and (max-width: 782px) {
+		flex-basis: 100%;
+	}
+
+	img {
+		float: left;
+		max-width: 75px;
+	}
+
+	h5 {
+		margin: 0 0 10px 100px;
+		font-size: 16px;
+	}
+
+	&__details {
+		padding: 20px;
+		flex: 1 0 auto;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex: 0 1 auto;
+		background-color: #f7f7f7;
+		border-top: 1px solid #ddd;
+		margin-top: auto;
+		padding: 20px;
+		position: relative;
+
+		.msg {
+			text-align: center;
+			justify-content: center;
+			display: flex;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #f7f7f7;
+			z-index: 3;
+		}
+	}
+
+	.error,
+	.status-label.status-installed {
+		color: #d63638;
+	}
+
+	.success,
+	.status-label.status-active {
+		color: #00a32a;
+	}
+
+	.addon-desc {
+		margin: 0 0 0 100px;
+	}
+}
+
+
+// Stripe Connect help information.
+.form-table td .simpay-stripe-connect-help {
+	margin: 15px 0;
+	display: flex;
+	align-items: center;
+
+	.dashicons {
+		margin-right: 4px;
+	}
+}
+
+.simpay-currency-field {
+	display: flex;
+	align-items: center;
+
+	> &:focus {
+		position: relative;
+		z-index: 5;
+	}
+}
+
+// Common attributes for both left and right positioned currency symbols
+.simpay-currency-symbol {
+	margin: 0;
+	padding-left: 8px;
+	padding-right: 8px;
+	line-height: 28px;
+	font-size: 14px;
+
+	@media screen and (max-width: 782px) {
+		line-height: 38px;
+	}
+
+	&-left {
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+	}
+
+	&-right {
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+}
+
+div.simpay-currency-symbol {
+	border-color: #7e8993;
+	border-style: solid;
+	background-color: #fff;
+}
+
+select.simpay-currency-symbol {
+	padding-right: 25px;
+}
+
+// Specific styles for the left currency symbol
+.simpay-currency-symbol-left {
+	border-width: 1px 0 1px 1px;
+
+	+ .simpay-field-amount {
+
+		border-radius: 0 4px 4px 0;
+	}
+}
+
+// Specific styles for the right currency symbol
+.simpay-currency-symbol-right {
+	border-width: 1px 1px 1px 0;
+}
+
+// Amount input
+.simpay-field-amount {
+	margin: 0;
+	padding-left: 8px;
+	padding-right: 8px;
+	font-size: 14px;
+	width: 6em;
+	position: relative;
+	z-index: 2;
+	border-radius: 0;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.simpay-template-explorer-open .show-settings {
+	display: none !important;
+}
+
+/**
+ * Page branding bar
+ */
+.simpay-branding-bar {
+	margin: 0 -20px;
+	padding: 14px 22px;
+	background: #fff;
+	border-bottom: 1px solid #c3c4c7;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	width: calc(100% + 20px);;
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+
+	// Hide branding bar on the "System Report" page.
+	.site-health & {
+		display: none;
+	}
+
+	&__title {
+		display: flex;
+		align-items: center;
+		margin: 8px 0;
+	}
+
+	&__logo {
+		width: 200px;
+	}
+
+	&__divider {
+		color: #dadbdf;
+		font-size: 23px;
+		font-weight: 400;
+		margin: 0 15px;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+
+		> div {
+			margin-left: 10px;
+			min-width: 40px; /** Help prevent Popover jumping by ensuring a rectangle exists to calculate from. */
+		}
+	}
+
+	&__actions-button {
+		color: #000;
+		cursor: pointer;
+		padding: 10px;
+		width: 40px;
+		height: 40px;
+		background-color: #f3f4f5;
+		border-radius: 50%;
+		border: 0;
+		box-shadow: none;
+		position: relative;
+		transition: background-color 0.2s ease;
+		box-sizing: border-box;
+		display: block;
+
+		&:hover {
+			background-color: #e5e5e5;
+		}
+
+		&:active,
+		&:focus {
+			box-shadow: 0 0 0 2px var(--wp-admin-theme-color);
+		}
+	}
+
+	&__actions-button-count {
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 16px;
+		color: #fff;
+		margin: 0;
+		background-color: #df2a4a;
+		border-radius: 100%;
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		top: -8px;
+		left: 50%;
+		margin-left: -8px;
+	}
+
+	.wp-heading-inline {
+		font-size: 23px;
+		font-weight: 400;
+		margin: 0;
+	}
+
+	.page-title-action {
+		font-weight: 600;
+		font-size: 13px;
+		line-height: normal;
+		cursor: pointer;
+		text-shadow: none;
+		text-decoration: none;
+		margin-left: 10px;
+		padding: 4px 8px;
+		border: 1px solid currentColor;
+		border-radius: 2px;
+		background: #f6f7f7;
+	}
+}
+
+/**
+ * "Landing zone"
+ */
+.simpay-landing-zone {
+	text-align: center;
+	max-width: 700px;
+	margin: 40px auto;
+
+	&__title {
+		font-size: 26px;
+		font-weight: 600;
+		margin: 0 0 1.5rem;
+		padding: 0;
+	}
+
+	&__subtitle {
+		font-size: 17px;
+		color: #666;
+		margin: 0.25rem 0;
+
+		strong {
+			color: #444;
+		}
+	}
+
+	section {
+		margin: 2rem 0;
+	}
+
+	&__empty-state-graphic {
+
+		img {
+			width: 425px;
+		}
+	}
+
+	&__screenshot {
+		& > * {
+			vertical-align: middle;
+		}
+
+		&-img {
+			display: inline-block;
+			position: relative;
+			width: 315px;
+			padding: 5px;
+			background-color: #ffffff;
+			box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05);
+			border-radius: 3px;
+
+			img {
+				max-width: 100%;
+				display: block;
+			}
+
+			.hover {
+				position: absolute;
+				opacity: 0;
+				height: calc(100% - 10px);
+				width: calc(100% - 10px);
+				top: 0;
+				left: 0;
+				border: 5px solid #ffffff;
+				background-color: rgba(0,0,0,0.15);
+				background-image: url('../../images/smtp/zoom.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 50px;
+				transition: all 0.3s;
+			}
+
+			&:hover .hover {
+				opacity: 1;
+				transition: all 0.3s;
+			}
+		}
+
+		ul {
+			text-align: left;
+			display: inline-block;
+			margin: 0 0 0 30px;
+			list-style-type: none;
+			max-width: calc(100% - 350px);
+
+			@media screen and (max-width: 782px) {
+				text-align: center;
+				margin: 30px auto;
+				max-width: 100%;
+				display: block;
+			}
+		}
+
+		li {
+			margin: 16px 0;
+			padding: 0;
+			font-size: 15px;
+			color: #777777;
+			position: relative;
+
+			&:before {
+				content: '';
+				background-image: url('../../images/smtp/arrow-right.svg');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: 14px;
+				width: 14px;
+				height: 14px;
+				display: inline-block;
+				margin: -3px 5px 0 0;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.button.button-large {
+		font-size: 17px;
+		line-height: 30px;
+		padding: 10px 20px;
+	}
+
+	&__purchased {
+		display: block;
+		margin: 15px 0 0;
+	}
+}
+
+/**
+ * Upgrade modal via jQuery UI.
+ *
+ * @see @wpsimplepay/utils/upgrade-modal.js
+ * @see ./src/Admin/Education/UpgradeModal.php
+ * @see ./views/admin-education-upgrade-modal.php
+ */
+.simpay-upgrade-modal,
+.simpay-upgrade-upe-modal {
+	padding: 0 !important;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	&__content {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: $grid-unit-20 $grid-unit-40 $grid-unit-40;
+
+		> .dashicons {
+			color: #333;
+			font-size: 48px;
+			width: 48px;
+			height: 48px;
+		}
+	}
+
+	&__title {
+		font-size: 22px;
+		line-height: 1.5;
+		display: block;
+		margin: $grid-unit-15 0 0;
+	}
+
+	&__description {
+		color: #777;
+		font-size: 16px;
+		margin: $grid-unit-20 0 $grid-unit-30;
+
+		strong {
+			color: #333;
+		}
+	}
+
+	&__discount {
+		font-size: 15px;
+		text-align: center;
+		margin: $grid-unit-40 calc($grid-unit-40 * -1) calc($grid-unit-40 * -1);
+		padding: $grid-unit-30 $grid-unit-50;
+		background-color: #fcf9e8;
+		position: relative;
+
+		svg {
+			background: #00a32a;
+			fill: white;
+			border-radius: 50%;
+			border: 4px solid white;
+			width: 32px;
+			height: 32px;
+			position: absolute;
+			top: -16px;
+			left: 50%;
+			margin-left: -16px;
+		}
+
+		u {
+			text-decoration: none;
+			font-weight: bold;
+			color: #00a32a;
+		}
+	}
+
+	.button-large {
+		font-size: 16px;
+		font-weight: bold;
+		margin: 0 0 15px;
+		padding: 8px 30px !important;
+		height: auto;
+	}
+}
+
+/**
+ * Teasers
+ */
+.simpay-teaser-float {
+	margin: 50px;
+	position: relative;
+
+	&__card {
+		text-align: center;
+		padding: 30px;
+		background: #fff;
+		border-radius: 4px;
+		box-shadow: 0 0 30px 15px rgb(0 0 0 / 18%);
+		position: relative;
+		z-index: 2;
+	}
+
+	#poststuff & h2,
+	h2 {
+		font-size: 24px;
+		font-weight: 600;
+		margin: 0;
+		padding: 0;
+	}
+
+	p {
+		font-size: 15px;
+		line-height: 1.35;
+		color: #666;
+
+		strong {
+			color: #444;
+		}
+	}
+
+	ul {
+		text-align: left;
+		display: inline-block;
+		margin: -10px 0 20px;
+		list-style-type: none;
+	}
+
+	li {
+		margin: 16px 0;
+		padding: 0 0 0 24px;
+		font-size: 15px;
+		background-image: url('../../images/smtp/arrow-right.svg');
+		background-position: left 3px;
+		background-repeat: no-repeat;
+		background-size: 14px;
+		color: #777777;
+	}
+
+	.button.button-large {
+		font-size: 17px;
+		line-height: 30px;
+		padding: 10px 20px;
+	}
+
+	.simpay-notice-dismiss {
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 20px;
+		color: #666;
+		font-weight: bold;
+		text-decoration: none;
+		margin-left: 5px;
+		padding: 6px 10px;
+		z-index: 2;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #666;
+			text-decoration: none;
+		}
+	}
+
+	&:after,
+	&:before {
+		opacity: 0.75;
+		z-index: 0;
+		content: '';
+		position: absolute;
+		left: -30px;
+		right: -30px;
+		top: -35px;
+		width: calc(100% + 60px);
+		height: 170px;
+		background-image:
+			linear-gradient(#ddd, #ddd),
+			linear-gradient(#eee, #eee),
+			linear-gradient(#ddd, #ddd),
+			linear-gradient(#eee, #eee);
+		background-repeat: no-repeat;
+		background-size:
+			100% 20px,
+			100% 40px,
+			100% 20px,
+			100% 40px;
+		background-position:
+			0 0,
+			0 30px,
+			0 100px,
+			0 130px;
+	}
+
+	&:before {
+		top: 170px;
+	}
+
+	.simpay-upgrade-btn-subtext {
+		margin: 24px -30px -30px;
+		padding: 32px 40px;
+		border-bottom-left-radius: 2px;
+		border-bottom-right-radius: 2px;
+		border: 0;
+
+		svg {
+			border-color: #fff;
+		}
+	}
+
+	&--inline {
+		margin: 40px 30px 30px;
+
+		.simpay-teaser-float__card {
+			padding: 30px;
+			box-shadow: 0 0 12px 6px rgb(0 0 0 / 16%);
+		}
+
+		#poststuff & h2,
+		h2 {
+			font-size: 20px;
+		}
+
+		p {
+			font-size: 15px;
+			margin: 0.75rem 0;
+		}
+
+		.button.button-large {
+			font-size: 15px;
+			line-height: 24px;
+			margin: 1rem 0;
+			padding: 8px 14px;
+			display: inline-block;
+		}
+
+		&:before,
+		&:after {
+			opacity: 0.60;
+		}
+
+		&:before {
+			display: none;
+		}
+
+		&:after {
+			top: 15px;
+		}
+	}
+}
+
+.simpay-form-settings-notice {
+	font-weight: normal;
+	color: #1d2327;
+	position: relative;
+	margin: 18px 18px 0;
+	padding: 14px;
+	border-radius: 4px;
+	background: #f5f5ff;
+
+	a {
+		color: #635aff;
+	}
+
+	.simpay-external-link .dashicons-external {
+		margin: 1px 0 0 2px;
+	}
+
+	strong {
+		font-size: 14px;
+	}
+
+	p {
+		margin: 5px 0 0 23px;
+	}
+
+	.simpay-notice-dismiss {
+		font-size: 20px;
+		color: #b0b0f0;
+		font-weight: bold;
+		line-height: 1;
+		position: absolute;
+		top: 0;
+		right: 5px;
+		text-decoration: none;
+		padding: 0 5px;
+		z-index: 2;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #9191ef;
+			text-decoration: none;
+			background: none;
+		}
+	}
+
+	// Add a border when output in settings pages (not a white background).
+	.simpay-settings & {
+
+		border: 2px solid #645aff;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	}
+}
+
+/**
+ * Lity adjustments.
+ */
+.post-type-simple-pay {
+
+	.lity {
+		z-index: 999999999;
+		padding: 20px;
+	}
+
+	.lity-close {
+		margin: 10px;
+	}
+
+	.lity-content {
+		max-width: 80vw;
+		max-height: 80vh;
+
+		img {
+			max-height: 80vh !important;
+			max-width: 80vw !important;
+		}
+	}
+}
+
+/*
+ * Stripe Connect
+ */
+
+#wpsp-api-keys-row-hide {
+	display: none;
+}
+
+/**
+ * Preview button
+ */
+.post-type-simple-pay #post-preview:not(.simpay-preview-button) {
+	display: none;
+}
+
+/**
+ * License management.
+ */
+.simpay-license-field-wrapper {
+	margin: 20px 0;
+}
+
+// Style input to be the same height as buttons.
+#simpay-settings-license-key-license-key {
+	margin: 0;
+
+	&[readonly] {
+		background: #fff;
+	}
+}
+
+.simpay-license-message__loading,
+.simpay-license-field {
+	display: flex;
+	align-items: center;
+}
+
+.wp-core-ui .button.simpay-license-button {
+
+	&.button-primary,
+	&.button-secondary {
+		font-size: 1rem;
+		line-height: 1;
+		margin: 0 8px;
+		padding: 13px;
+	}
+}
+
+.simpay-license-message {
+	font-size: 15px;
+	margin-top: 8px;
+
+	&--valid {
+		color: #15803d;
+	}
+
+	&--invalid {
+		color: #b91c1c;
+	}
+}
+
+/**
+ * Form settings
+ */
+
+// reCAPTCHA.
+.simpay-recaptcha-payment-form-feedback {
+
+	.dashicons {
+		margin-top: -1px;
+		display: inline-block;
+	}
+
+	.dashicons-update-alt {
+		animation: rotation 2s infinite linear;
+	}
+}
+
+// Purchase Restrictions.
+.simpay-form-builder-inset-settings {
+	margin: 3px 0 0 24px;
+
+	@at-root fieldset#{&} > *:not(legend) {
+		margin: 5px 0 8px;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.simpay-form-builder-inventory-control {
+	@include input-control;
+
+	margin: 0;
+	padding: 0;
+	width: auto;
+	display: inline-flex;
+	align-items: center;
+
+	&:focus-within {
+		@include input-style__focus();
+	}
+
+	input[type="number"] {
+		border: 0;
+		box-shadow: none;
+		background: none;
+		border-radius: 0;
+		width: 75px;
+
+		&:focus {
+			border: 0;
+			box-shadow: none;
+			outline: 0;
+		}
+	}
+
+	+ label {
+		margin-left: 8px;
+	}
+
+	&__initial {
+		color: $gray-700;
+		font-size: $mobile-text-min-font-size;
+		line-height: normal;
+		padding-right: 8px;
+
+		@include break-small {
+			font-size: $default-font-size;
+			line-height: normal;
+		}
+
+		&:before {
+			content: "/";
+			display: inline-block;
+			vertical-align: top;
+			margin-top: -1px;
+		}
+	}
+}
+
+.simpay-form-builder-purchase-restrictions {
+
+	&__restriction-item {
+		display: flex;
+		align-items: center;
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+
+	&__restriction-item label {
+		margin-left: 8px;
+	}
+
+	&__restriction-item-datetime {
+		display: flex;
+		align-items: center;
+
+		> * {
+			margin-right: 10px;
+		}
+
+		span {
+			color: $gray-700;
+		}
+	}
+
+}
+
+// Fee recovery.
+.simpay-form-builder-fee-recovery {
+
+	&__amounts {
+		display: flex;
+		align-items: center;
+		margin-top: 5px;
+	}
+
+	::-webkit-input-placeholder {
+		color: #b7bec7;
+	}
+
+	::-moz-placeholder {
+		color: #b7bec7;
+		opacity: 1;
+	}
+
+	:-ms-input-placeholder {
+		color: #b7bec7;
+	}
+
+	> * {
+		margin-right: 8px;
+	}
+}
+
+.simpay-form-builder-fee-percent-control {
+	@include input-control;
+
+	margin: 0;
+	padding: 0;
+	width: auto;
+	display: inline-flex;
+	align-items: center;
+
+	&:focus-within {
+		@include input-style__focus();
+	}
+
+	input[type="number"] {
+		border: 0;
+		box-shadow: none;
+		background: none;
+		border-radius: 0;
+		width: 75px;
+
+		&:focus {
+			border: 0;
+			box-shadow: none;
+			outline: 0;
+		}
+	}
+
+	+ label {
+		margin-left: 8px;
+	}
+
+	&__suffix {
+		color: $gray-700;
+		font-size: $mobile-text-min-font-size;
+		line-height: normal;
+		padding-right: 8px;
+
+		@include break-small {
+			font-size: $default-font-size;
+			line-height: normal;
+		}
+	}
+}
+
+.simpay-form-builder-automations {
+
+	&__cta {
+		margin: 24px 0 6px;
+		text-align: center;
+	}
+}
+
+.simpay-form-builder-automator {
+	padding: 16px 4px 26px !important;
+
+	&,
+	* {
+		box-sizing: border-box;
+	}
+
+	input[type="search"] {
+		font-size: 15px;
+		padding: 2px 8px;
+	}
+
+	&__integrations {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-column-gap: 16px;
+		grid-row-gap: 16px;
+		margin: 18px -18px 0;
+		padding: 0 18px 10px;
+		width: calc(100% + 36px);
+		max-height: 400px;
+		overflow-y: scroll;
+	}
+
+	&__integrations-integration {
+		color: initial;
+		text-align: center;
+		text-decoration: none;
+		background: #fff;
+		border: 1px solid #eee;
+		border-radius: 4px;
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+		transition: all ease-in 0.15s;
+
+		img {
+			display: block;
+			margin: 16px auto;
+			height: 50px;
+		}
+
+		span {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			padding: 8px 16px;
+			display: block;
+			border-top: 1px solid #eee;
+		}
+
+		&:hover {
+			cursor: pointer;
+			border-color: #ddd;
+			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+		}
+	}
+}
+
+body.site-health #wpbody-content,
+body.post-type-simple-pay #wpbody-content {
+	padding-bottom: 200px;
+}
+
+#wpfooter {
+
+	.simpay-footer-promotion {
+		text-align: center;
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 16px;
+		color: #787c82;
+		padding: 20px 0 30px 0;
+		margin-bottom: 20px;
+
+		p {
+			font-weight: 600;
+		}
+	}
+
+	.simpay-footer-promotion-links,
+	.simpay-footer-promotion-social {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.simpay-footer-promotion-links {
+		margin: 9px 0 0;
+
+		span {
+			color: #c3c4c7;
+			padding: 0 7px;
+		}
+	}
+
+	.simpay-footer-promotion-social {
+		margin: 10px 0 0 0;
+		gap: 10px;
+
+		li {
+			margin-bottom: 0;
+		}
+
+		li:hover {
+
+			path {
+				fill: #50575e;
+			}
+		}
+
+		a {
+			display: block;
+			height: 16px;
+		}
+	}
+}
+
+.simpay-settings-is_upe td {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-left-width: 4px;
+	border-left-color: #2271b1;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	padding: 12px 18px;
+}

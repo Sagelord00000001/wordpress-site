@@ -1,0 +1,42 @@
+.es-nav-tab {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 2px solid #EFF3F5;
+
+  &__item {
+    display: inline-block;
+    border-bottom: 2px solid #EFF3F5;
+    position: relative;
+    bottom: -2px;
+    margin: 0 4em 0 0;
+    height: 3.6em;
+    line-height: 3.6em;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    a {
+      color: #B0BEC5;
+      font-size: 1.4em;
+      font-weight: bold;
+      line-height: 1.29em;
+      text-decoration: none;
+    }
+
+    &--active {
+      border-bottom: 2px solid #263238;
+
+      a {
+        color: #263238;
+      }
+    }
+  }
+}
+
+.es-nav-tab-wrap {
+  font-size: 10px;
+  margin: 2.4em 0 2.4em;
+}

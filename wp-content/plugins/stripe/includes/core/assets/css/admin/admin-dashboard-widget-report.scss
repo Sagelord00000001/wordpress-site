@@ -1,0 +1,104 @@
+@import "~@wordpress/base-styles/colors";
+@import "~@wordpress/base-styles/variables";
+@import "~@wordpress/base-styles/mixins";
+@import "~@wordpress/base-styles/breakpoints";
+@import "~@wordpress/base-styles/animations";
+@import "~@wordpress/base-styles/z-index";
+
+@import "./charts.scss";
+
+@include wordpress-admin-schemes();
+
+body.admin-color-fresh {
+	@include admin-scheme(#2271b1);
+}
+
+.simpay-admin-dashboard-widget-report {
+
+	* {
+		box-sizing: border-box;
+	}
+
+	&__data {
+		margin: 20px -12px -12px;
+		padding: 12px;
+		border-top: 1px solid $gray-200;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__data-filter {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.components-base-control__field {
+			margin-bottom: 0;
+		}
+	}
+
+	&__data-filter-title {
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+
+		> * {
+			margin-right: $grid-unit-10;
+		}
+	}
+
+	&__data-filter-controls {
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+
+		> * {
+			margin-left: $grid-unit-10;
+		}
+	}
+
+	&__data-list {
+		margin: 10px -12px -12px;
+
+		> div {
+			background-color: #fafafa;
+			border-top: 1px solid $gray-200;
+			padding: 10px 12px;
+		}
+	}
+}
+
+.simpay-admin-dashboard-widget-report-recommended-plugin {
+	color: #777;
+	margin: 12px -12px -12px;
+	padding: 10px 12px;
+	position: relative;
+	border-top: 1px solid #e0e0e0;
+
+	strong {
+		color: initial;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.simpay-notice-dismiss {
+		position: absolute;
+		top: 1px;
+		right: 8px;
+		font-size: 20px;
+		color: #777;
+		text-decoration: none;
+		margin-left: 5px;
+		padding: 6px 10px;
+		z-index: 2;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #666;
+			text-decoration: none;
+		}
+	}
+}

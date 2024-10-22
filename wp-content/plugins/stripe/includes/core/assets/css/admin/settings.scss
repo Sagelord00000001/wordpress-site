@@ -1,0 +1,205 @@
+.simpay-settings-subsections {
+	display: flex;
+	align-items: center;
+	box-shadow: inset 0 -1px 0 0 #ccc;
+}
+
+.simpay-settings-subsections__subsection {
+	font-weight: 500;
+	text-decoration: none;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+
+	.dashicons {
+		width: 18px;
+		height: 18px;
+		font-size: 18px;
+		margin-right: 4px;
+	}
+
+	&.is-active {
+		box-shadow: inset 0 -4px 0 0 currentColor;
+		position: relative;
+		z-index: 1;
+	}
+
+	&:not(.is-active) {
+		color: #23282d;
+	}
+}
+
+.simpay-settings {
+
+	form > h2:not(.nav-tab-wrapper) {
+		clip: rect(1px, 1px, 1px, 1px);
+		height: 1px;
+		overflow: hidden;
+		position: absolute !important;
+		width: 1px;
+	}
+
+	.form-table td fieldset + p,
+	.form-table td label + p,
+	.form-table td select + p,
+	.form-table td input + p {
+		color: #666;
+		font-style: italic;
+	}
+
+	.simpay-settings-subsections__subsection {
+		display: flex;
+		align-items: center;
+
+		.simpay-settings-bubble {
+			margin-left: 5px;
+		}
+	}
+}
+
+.simpay-settings .simpay-settings-visual-toggles {
+	margin: 30px 0 0;
+	display: flex;
+
+	input[type="radio"] {
+		display: none;
+	}
+
+	&__toggle {
+		user-select: none;
+		min-width: 180px;
+		margin: 0 30px 0 0 !important;
+		position: relative;
+		display: block;
+		background-color: #fff;
+		border-radius: 4px;
+		border: 1px solid #c3c4c7;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+
+		&:hover {
+			border: 1px solid #999;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
+		}
+	}
+
+	input[type="radio"]:checked + .simpay-settings-visual-toggles__toggle {
+		border-color: #007cba;
+		border-color: var(--wp-admin-theme-color);
+		box-shadow: 0 0 0 1px #007cba;
+		box-shadow: 0 0 0 1px var(--wp-admin-theme-color);
+	}
+
+	&__toggle-recommended,
+	&__toggle-not-recommended {
+		text-align: center;
+		font-size: 12px;
+		text-transform: uppercase;
+		font-weight: bold;
+		margin: 0;
+		padding: 5px 0;
+		display: block;
+		border-top-right-radius: 4px;
+		border-top-left-radius: 4px;
+	}
+
+	&__toggle-recommended {
+		color: #0f8569;
+		background: #f4f9f7;
+	}
+
+	&__toggle-not-recommended {
+		color: #b91c1b;
+		background: #fef2f2;
+	}
+
+	&__toggle-icon {
+		margin: 20px auto 15px;
+		padding: 0 15px;
+		display: block;
+	}
+
+	&__toggle-label {
+		line-height: 1.5;
+		text-align: center;
+		font-size: 16px;
+		font-weight: 500;
+		margin: 15px;
+		display: block;
+
+		small {
+			color: #666666;
+			font-weight: normal;
+			font-size: 13px;
+			line-height: 1;
+			display: block;
+			margin: 4px 0;
+		}
+	}
+}
+
+// CAPTCHA.
+.simpay-settings .simpay-settings-visual-toggles.simpay-settings-captcha-type {
+
+	.simpay-settings-visual-toggles__toggle {
+		min-height: 160px;
+
+		&-icon {
+			width: 80px;
+			height: 80px;
+		}
+	}
+
+	input[type="radio"] {
+
+		&.simpay-settings-captcha-type--is-recommended:checked + .simpay-settings-visual-toggles__toggle {
+			border-color: #0f8569;
+			box-shadow: 0 0 0 1px #0f8569;
+		}
+
+		&.simpay-settings-captcha-type--is-not-recommended:checked + .simpay-settings-visual-toggles__toggle {
+			border-color: #b91c1b;
+			box-shadow: 0 0 0 1px #b91c1b;
+		}
+	}
+
+	label[for="simpay-settings-captcha-type-cloudflare-turnstile"] .simpay-settings-visual-toggles__toggle-icon {
+		width: 120px;
+	}
+}
+
+.simpay-settings-general-recaptcha-no_captcha_warning,
+.simpay-settings-hcaptcha_secret_key,
+.simpay-settings-cloudflare_turnstile_secret_key,
+.simpay-settings-recaptcha_score_threshold {
+
+	th,
+	td {
+		padding-bottom: 50px !important;
+	};
+}
+
+// Email settings.
+.simpay-settings {
+
+	// Hide subsection tabs.
+	.simpay-settings-subsections__subsection {
+
+		&.simpay-settings-subsection-summary-report,
+		&.simpay-settings-subsection-payment-confirmation,
+		&.simpay-settings-subsection-payment-notification,
+		&.simpay-settings-subsection-upcoming-invoice,
+		&.simpay-settings-subsection-manage-subscriptions,
+		&.simpay-settings-subsection-payment-processing-confirmation,
+		&.simpay-settings-subsection-payment-processing-notification,
+		&.simpay-settings-subsection-payment-refunded-confirmation,
+		&.simpay-settings-subsection-subscription-cancel-confirmation,
+		&.simpay-settings-subsection-subscription-cancel-notification,
+		&.simpay-settings-subsection-invoice-confirmation {
+			display: none;
+		}
+	}
+
+	.simpay-settings-subsection-emails-tools {
+		margin-left: auto;
+	}
+}

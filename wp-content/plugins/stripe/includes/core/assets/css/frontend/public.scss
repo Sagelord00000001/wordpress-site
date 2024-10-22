@@ -1,0 +1,418 @@
+$base-font:
+	-apple-system,
+	BlinkMacSystemFont,
+	Segoe UI,
+	Helvetica,
+	Arial,
+	sans-serif,
+	Apple Color Emoji,
+	Segoe UI Emoji;
+$base-text-color: #333;
+$error-text-color: #eb1c26;
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+}
+
+.grecaptcha-badge {
+	z-index: 100;
+}
+
+.stripe-button-el {
+	.simpay-styled & {
+		text-decoration: none;
+
+		&:hover {
+			box-shadow: none;
+		}
+	}
+}
+
+// Loading state.
+.simpay-checkout-form {
+	&--requires_payment_method {
+		> *:not(.simpay-form-control):not(.simpay-amounts-container):not(.simpay-card-container):not(
+				.simpay-checkout-btn-container
+			):not(.simpay-payment-btn-container):not(.simpay-link-authentication-container):not(
+				.simpay-address-container-upe
+			):not(.simpay-test-mode-badge-container):not(.simpay-errors) {
+			position: relative;
+			opacity: 0.65;
+
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				top: 0;
+			}
+		}
+	}
+
+	&--loading {
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			top: 0;
+		}
+
+		.simpay-form-control {
+			opacity: 0.65;
+		}
+	}
+}
+
+.simpay-form-control {
+	margin-bottom: 15px;
+}
+
+.simpay-payment-btn em.simpay-total-amount-value {
+	font-style: normal;
+}
+
+// Error messages container.
+.simpay-errors {
+	.simpay-styled & {
+		font-family: $base-font;
+		color: $error-text-color;
+	}
+}
+
+.simpay-form-control:not(:last-of-type) + .simpay-errors:not(:empty) {
+	margin: -10px 0 15px;
+	font-size: 0.93rem;
+}
+
+.simpay-form-control.simpay-checkout-btn-container {
+	+ .simpay-errors:not(:empty) {
+		margin-top: 15px;
+	}
+}
+
+.simpay-plan-select-container .simpay-custom-amount-error {
+	.simpay-styled & {
+		font-size: 0.93rem;
+		margin-top: 5px;
+	}
+}
+
+// Test mode badge.
+.simpay-test-mode-badge-container {
+	.simpay-checkout-form--embedded &,
+	.simpay-modal__content & {
+		text-align: center;
+	}
+
+	.simpay-test-mode-badge {
+		color: #a04903;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 10px;
+		font-family: $base-font;
+		line-height: 10px;
+		font-weight: 700;
+		padding: 5px 7px;
+		border-radius: 3px;
+		background: #ffde92;
+		display: inline-flex;
+		align-items: center;
+	}
+}
+
+html body.simpay-payment-page,
+html body.simpay-form-preview {
+	font-family: $base-font;
+	margin: 50px;
+	background: #428bca;
+	box-sizing: border-box;
+
+	*,
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+
+	&:before,
+	&:after {
+		display: none;
+	}
+
+	.simpay-form-preview-wrap {
+		margin: 0 auto;
+		max-width: 460px;
+		padding: 30px;
+		background: white;
+		border-radius: 4px;
+		box-shadow: 0 25px 50px -12px rgb(0, 0, 0, 0.25);
+	}
+
+	.simpay-form-preview-notice {
+		text-align: center;
+		margin: 0 auto 25px;
+		max-width: 440px;
+		border-radius: 4px;
+
+		&-actions {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&-button,
+		&-button-link {
+			color: #fff;
+			font-family: $base-font;
+			font-weight: bold;
+			font-size: 15px;
+			line-height: 1;
+			text-shadow: none;
+			text-transform: none;
+			margin: 5px;
+		}
+
+		&-button {
+			background-color: #2d6ca2;
+			padding: 8px 12px;
+			box-shadow: none;
+			border: 0;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		&-button-link {
+			color: #fff;
+			font-size: 15px;
+			font-weight: bold;
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+
+			span:first-child {
+				margin-right: 4px;
+			}
+		}
+
+		&-section {
+			margin: 10px 0;
+		}
+
+		p {
+			font-family: $base-font;
+			font-size: 15px;
+			color: rgba(255, 255, 255, 0.85);
+			line-height: 1.45;
+			margin: 15px 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	form:not(.simpay-checkout-form--overlay) {
+		margin-bottom: 0;
+		max-width: 400px;
+	}
+}
+
+html body.simpay-payment-page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.simpay-payment-page-wrap {
+		margin: 0 auto;
+		width: calc(400px + 4rem);
+		padding: 2rem;
+		background: white;
+		border-radius: 4px;
+		box-shadow: 0 25px 50px -12px rgb(0, 0, 0, 0.25);
+	}
+
+	.simpay-payment-page-wrap img {
+		max-width: 100%;
+		max-height: 125px;
+		margin: 0 auto 2rem;
+		display: block;
+	}
+
+	.simpay-embedded-heading:not(.simpay-heading) {
+		display: none;
+	}
+
+	.simpay-payment-page-footer {
+		text-align: center;
+		font-family: $base-font;
+		font-size: 15px;
+		color: rgba(255, 255, 255, 0.85);
+		line-height: 1.45;
+		margin: 2rem auto 1rem;
+		max-width: 440px;
+		border-radius: 4px;
+	}
+
+	.simpay-payment-page-powered-by {
+		color: #fff;
+		text-align: center;
+		font-family: $base-font;
+		font-size: 14px;
+		text-decoration: none;
+		margin-top: 1rem;
+		display: block;
+		align-items: center;
+		opacity: 0.65;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		img {
+			vertical-align: middle;
+			width: 200px;
+			margin-left: 10px;
+		}
+	}
+
+	.simpay-payment-receipt-wrap {
+		max-width: 400px;
+
+		p {
+			color: $base-text-color;
+			font-size: 15px;
+			font-family: $base-font;
+			line-height: 1.5;
+		}
+
+		p:only-child {
+			margin: 0;
+		}
+
+		p:first-of-type {
+			margin-top: 0;
+		}
+
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	// Set width to 90vw when less than 500px.
+	@media (max-width: 500px) {
+		margin: 20px;
+
+		.simpay-payment-page-wrap {
+			min-width: 0;
+			width: 90vw;
+			padding: 1.5rem;
+			min-width: 0;
+		}
+	}
+}
+
+.simpay-subscription-management-form {
+	label {
+		display: block;
+		margin-bottom: 0.25em;
+	}
+
+	input:not([type="submit"]) {
+		font-size: 1em;
+		font-family: inherit;
+		padding: calc(0.667em + 2px);
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+	}
+
+	button {
+		box-shadow: none;
+		cursor: pointer;
+		display: inline-block;
+		text-align: center;
+		overflow-wrap: break-word;
+	}
+
+	.form-message-container {
+		margin-top: 5px;
+		width: 100%;
+		display: none;
+	}
+
+	.form-error-container,
+	.form-success-container,
+	.form-warning-container {
+		padding: 1rem 1.5rem;
+		border-radius: 4px;
+		margin-bottom: 10px;
+
+		.form-message {
+			font-size: 14px;
+		}
+	}
+
+	.form-error-container {
+		background-color: #fef3f2;
+
+		.form-message {
+			color: #9a1b1b;
+		}
+	}
+
+	.form-success-container {
+		background-color: #f1fdf4;
+
+		.form-message {
+			color: #156634;
+		}
+	}
+
+	.form-warning-container {
+		background-color: #fefce8;
+
+		.form-message {
+			color: #864d0f;
+		}
+	}
+}
+
+
+.simpay-receipt {
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	th, td {
+		border: 1px solid #ddd;
+		padding: 8px;
+	}
+
+	th {
+		background-color: #f2f2f2;
+		text-align: left;
+	}
+
+	.total-row {
+		font-weight: bold;
+	}
+
+	.text-right {
+		text-align: right;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+}

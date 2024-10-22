@@ -190,7 +190,7 @@ class Es_Assets {
 			if (! empty( $_SERVER["REMOTE_ADDR"] ) ) {
 				$ip = $_SERVER["REMOTE_ADDR"];
 				if (! empty( $ip ) ) {
-					//$xml = simplexml_load_file("http://www.geoplugin.net/xml.gp?ip=".$ip);
+					$xml = simplexml_load_file("http://www.geoplugin.net/xml.gp?ip=".$ip);
 					if (! empty ( $xml->geoplugin_countryCode ) ) {
 						$localize['settings']['country'] = $xml->geoplugin_countryCode;
 					}
